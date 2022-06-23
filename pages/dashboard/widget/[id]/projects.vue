@@ -4,6 +4,22 @@ const data = ref([
   { id: 2, data: "Spirited Away" },
 ])
 const { onDrop, applyDrag } = useDnd(data)
+
+const fetchMeta = (ev: FocusEvent) => {
+  const url = (ev.target as HTMLInputElement).value
+  if (!url) return
+  $fetch("/api/url-meta", {
+    method: "POST",
+    body: {
+      link: url,
+    },
+  }).then((response) => {
+    console.log({ url, response })
+  })
+}
+const deleteProject = (index: number) => {
+  console.log("deleteing " + index)
+}
 </script>
 
 <template>
@@ -14,34 +30,15 @@ const { onDrop, applyDrag } = useDnd(data)
       <Draggable v-for="(item, i) in data" :key="item.id">
         <div class="my-2">
           <div class="flex items-center">
-            <button
-              class="mr-2 py-1 text-gray-400 hover:text-gray-800 handle bg-transparent hover:bg-orange-100 transition rounded"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                aria-hidden="true"
-                role="img"
-                class="iconify iconify--radix-icons"
-                width="24"
-                height="24"
-                preserveAspectRatio="xMidYMid meet"
-                viewBox="0 0 15 15"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M5.5 4.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25Zm4 0a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25ZM10.625 7.5a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0ZM5.5 8.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25Zm5.125 2.875a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0ZM5.5 12.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25Z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </button>
+            <Handle @delete="deleteProject(i)"></Handle>
 
             <div class="w-full flex items-center space-x-2">
-              <div class="w-40 h-27 flex-shrink-0 bg-white rounded-xl border border-gray-300"></div>
+              <div class="w-40 h-25 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300">
+                <img class="h-full object-cover" src="https://supabase-schema.vercel.app/og.png" alt="" />
+              </div>
               <div class="w-full flex flex-col">
-                <InputText class="!mb-4" placeholder="Title"></InputText>
-                <InputText placeholder="URL"></InputText>
+                <InputText class="!mb-2" placeholder="Title"></InputText>
+                <InputText placeholder="URL" @blur="fetchMeta"></InputText>
               </div>
             </div>
           </div>

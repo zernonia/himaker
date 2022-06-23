@@ -2,6 +2,8 @@ import PrimeVue from "primevue/config"
 import Button from "primevue/button"
 import InputText from "primevue/inputtext"
 import Dropdown from "primevue/dropdown"
+import Menu from "primevue/menu"
+import ContextMenu from "primevue/contextmenu"
 
 import "primevue/resources/themes/lara-light-teal/theme.css"
 import "primevue/resources/primevue.css"
@@ -12,4 +14,6 @@ export default defineNuxtPlugin((nuxt) => {
   nuxt.vueApp.component("Button", Button)
   nuxt.vueApp.component("InputText", InputText)
   nuxt.vueApp.component("Dropdown", Dropdown)
+  nuxt.vueApp.component("Menu", Menu)
+  nuxt.vueApp.component("ContextMenu", ContextMenu)
 })
