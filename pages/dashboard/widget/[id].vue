@@ -22,7 +22,7 @@ const goTo = (child: string) => {
         <button @click="goTo('etc')">Etc</button>
       </div>
 
-      <div class="ml-8 p-6 w-full bg-orange-50 rounded-xl">
+      <div class="ml-8 w-full">
         <ClientOnly>
           <NuxtPage></NuxtPage>
         </ClientOnly>

@@ -6,14 +6,12 @@ const {
 const data = ref([
   { id: 1, data: "Princess Mononoke" },
   { id: 2, data: "Spirited Away" },
-  { id: 3, data: "My Neighbor Totoro" },
-  { id: 4, data: "Howl's Moving Castle" },
 ])
 const { onDrop, applyDrag } = useDnd(data)
 </script>
 
 <template>
-  <div class="flex flex-col form">
+  <div class="p-6 w-full bg-orange-50 rounded-xl flex flex-col form">
     <label for="title">Title</label>
     <InputText id="title" name="title" placeholder="by Me"></InputText>
 
@@ -24,9 +22,11 @@ const { onDrop, applyDrag } = useDnd(data)
     <InputText id="maker_names" name="maker_names" placeholder="Supabase ⚡️"></InputText>
 
     <h3>Images</h3>
-    <Container orientation="vertical" @drop="onDrop" drag-class="transition" drop-class="transition">
+    <Container orientation="vertical" @drop="onDrop">
       <Draggable v-for="(item, i) in data" :key="item.id">
-        <div>{{ item.data }}</div>
+        <div class="mb-4">
+          <div class="w-20 h-20 rounded-full bg-white">{{ item.data.length }}</div>
+        </div>
       </Draggable>
     </Container>
   </div>
