@@ -13,7 +13,7 @@ export const useWidgetStore = () =>
         title: "",
         list: [
           {
-            icon: "github",
+            icon: "",
             title: "",
             url: "",
           },

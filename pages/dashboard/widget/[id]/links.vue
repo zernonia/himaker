@@ -3,6 +3,13 @@ const widget = useWidgetStore()
 const { list } = toRefs(widget.value.links[0])
 const { onDrop, applyDrag } = useDnd(list)
 
+const addLink = () => {
+  list.value.push({
+    icon: "",
+    title: "",
+    url: "",
+  })
+}
 const deleteLink = (index: number) => {
   console.log("deleteing " + index)
 }
@@ -17,7 +24,7 @@ const iconOptions = ref([
 </script>
 
 <template>
-  <div class="p-6 w-full bg-orange-50 rounded-xl flex flex-col form">
+  <div class="p-6 w-full bg-gray-50 rounded-xl flex flex-col form">
     <label for="maker_links">Title</label>
     <InputText v-model="widget.links[0].title" id="maker_links" name="maker_links" placeholder="Zernonia"></InputText>
 
@@ -32,10 +39,11 @@ const iconOptions = ref([
             <div class="w-full flex items-center space-x-2">
               <Dropdown class="w-186px" :options="iconOptions" optionValue="value" v-model="list[i].icon">
                 <template #value="slotProps">
-                  <div class="flex items-center h-19px">
+                  <div v-if="slotProps.value" class="flex items-center h-19px">
                     <div :class="`i-ion-logo-${slotProps.value} mr-2 text-xl`"></div>
                     <p>{{ iconOptions.find((i) => i.value === slotProps.value).name }}</p>
                   </div>
+                  <div v-else class="h-19px">Icon</div>
                 </template>
                 <template #option="slotProps">
                   <div class="flex items-center">
@@ -52,5 +60,6 @@ const iconOptions = ref([
         </div>
       </Draggable>
     </Container>
+    <Button @click="addLink" icon="pi pi-plus" class="p-button-rounded p-button-sm !mt-2 !w-10 !h-10"></Button>
   </div>
 </template>

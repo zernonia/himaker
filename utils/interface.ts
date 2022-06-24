@@ -16,8 +16,8 @@ export interface Widget {
   }[]
 
   projects: {
-    image: ""
-    title: ""
-    url: ""
+    image: string
+    title: string
+    url: string
   }[]
 }

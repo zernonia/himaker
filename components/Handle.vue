@@ -14,7 +14,7 @@ const items = ref<MenuItem[]>([
 
 <template>
   <button
-    class="mr-2 py-1 text-gray-400 hover:text-gray-800 handle bg-transparent hover:bg-orange-100 transition rounded"
+    class="mr-2 py-1 text-gray-400 hover:text-gray-800 handle bg-transparent hover:bg-gray-200 transition rounded"
     @click="menu.toggle"
     @contextmenu="menu.toggle"
   >
