@@ -8,8 +8,12 @@ const goTo = (child: string) => {
 const widget = useWidgetStore()
 const client = useSupabaseClient()
 const user = useSupabaseUser()
+
+const isSaving = ref(false)
 const save = async () => {
+  isSaving.value = true
   const { data, error } = await client.from("widgets").upsert({ id, user_id: user.value.id, payload: widget.value })
+  isSaving.value = false
   console.log(data)
 }
 
@@ -34,7 +38,7 @@ onMounted(async () => {
         <button @click="goTo('projects')">Projects</button>
         <button @click="goTo('etc')">Etc</button>
 
-        <Button @click="save">Save</Button>
+        <Button @click="save" icon="pi pi-save" :loading="isSaving" label="Save" iconPos="right"></Button>
       </div>
 
       <div class="w-4/5">
