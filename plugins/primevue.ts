@@ -5,6 +5,7 @@ import Dropdown from "primevue/dropdown"
 import Menu from "primevue/menu"
 import ContextMenu from "primevue/contextmenu"
 import OverlayPanel from "primevue/overlaypanel"
+import Divider from "primevue/divider"
 
 import "primevue/resources/themes/lara-light-teal/theme.css"
 import "primevue/resources/primevue.css"
@@ -18,4 +19,5 @@ export default defineNuxtPlugin((nuxt) => {
   nuxt.vueApp.component("Menu", Menu)
   nuxt.vueApp.component("ContextMenu", ContextMenu)
   nuxt.vueApp.component("OverlayPanel", OverlayPanel)
+  nuxt.vueApp.component("Divider", Divider)
 })

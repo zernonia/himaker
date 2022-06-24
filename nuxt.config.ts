@@ -4,7 +4,10 @@ import presetIcons from "@unocss/preset-icons"
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  alias: { interface: fileURLToPath(new URL("./utils/interface", import.meta.url)) },
+  alias: {
+    interface: fileURLToPath(new URL("./utils/interface", import.meta.url)),
+    mapping: fileURLToPath(new URL("./utils/map", import.meta.url)),
+  },
   css: ["~/assets/main.css"],
   modules: ["nuxt-windicss", "@nuxtjs/supabase", "@unocss/nuxt"],
   unocss: {

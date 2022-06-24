@@ -54,7 +54,7 @@ const setImage = (ev: string, index: number) => {
               <div class="w-full flex flex-col items-center space-y-4">
                 <div
                   @click="clickUpload"
-                  class="w-72 h-40 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300 cursor-pointer"
+                  class="w-72 h-56 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300 cursor-pointer"
                 >
                   <img class="h-full w-full object-cover" v-if="item.image" :src="item.image" alt="" />
                   <Upload @done="setImage($event, i)"></Upload>

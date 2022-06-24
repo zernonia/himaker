@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { mapIcon } from "mapping"
+
 const widget = useWidgetStore()
 const { list } = toRefs(widget.value.links[0])
 const { onDrop, applyDrag } = useDnd(list)
@@ -23,16 +25,6 @@ const iconOptions = ref([
   { name: "GitHub", value: "github" },
   { name: "Dribbble", value: "dribbble" },
 ])
-
-const mapIcon = {
-  link: "i-ion-link",
-  twitter: "i-ion-logo-twitter",
-  facebook: "i-ion-logo-facebook",
-  instagram: "i-ion-logo-instagram",
-  pinterest: "i-ion-logo-pinterest",
-  github: "i-ion-logo-github",
-  dribbble: "i-ion-logo-dribbble",
-}
 </script>
 
 <template>

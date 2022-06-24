@@ -4,3 +4,11 @@ html {
 .form input {
   @apply mt-1 mb-4;
 }
+
+.p-divider.p-divider-horizontal:before {
+  @apply !border-t border-solid !border-gray-200;
+}
+
+.swiper-button-disabled {
+  @apply opacity-50 transition;
+}

@@ -27,8 +27,10 @@ onMounted(async () => {
 
 <template>
   <div>
-    <div class="w-full h-64 rounded-2xl bg-gray-50 flex items-center justify-center">
-      <div>{{ widget }}</div>
+    <div class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border">
+      <div class="preview absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
+        <Widget :widget="widget"></Widget>
+      </div>
     </div>
 
     <div class="flex mt-8">
@@ -43,7 +45,7 @@ onMounted(async () => {
 
       <div class="w-4/5">
         <ClientOnly>
-          <NuxtPage :key="tick"></NuxtPage>
+          <NuxtPage class="border" :key="tick"></NuxtPage>
         </ClientOnly>
       </div>
     </div>
