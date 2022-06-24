@@ -10,5 +10,5 @@ html {
 }
 
 .swiper-button-disabled {
-  @apply opacity-50 transition;
+  @apply opacity-80 transition;
 }

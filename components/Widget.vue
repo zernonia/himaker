@@ -48,41 +48,42 @@ const modules = [Navigation]
           <span>Projects</span>
         </Divider>
 
-        <Swiper
-          :navigation="{ nextEl: '.image-next', prevEl: '.image-prev' }"
-          :slidesPerView="1.3"
-          :spaceBetween="20"
-          class="w-full"
-          :modules="modules"
-        >
-          <SwiperSlide v-for="project in widget.projects">
-            <div
-              class="ml-1 w-56 rounded-xl overflow-hidden border border-orange-300 shadow-transparent hover:shadow transition"
-            >
-              <NuxtLink :to="project.url" target="_blank">
-                <img class="h-40 w-full object-cover" :src="project.image" alt="" />
-                <p class="text-center py-2 font-semibold bg-orange-50 text-orange-500">{{ project.title }}</p>
-              </NuxtLink>
-            </div>
-          </SwiperSlide>
-
+        <div class="relative w-full">
+          <Swiper
+            :navigation="{ nextEl: '.image-next', prevEl: '.image-prev' }"
+            :slidesPerView="1.3"
+            :spaceBetween="20"
+            class="w-full"
+            :modules="modules"
+          >
+            <SwiperSlide v-for="project in widget.projects">
+              <div
+                class="ml-1 w-56 rounded-xl overflow-hidden border border-orange-300 shadow-transparent hover:shadow transition"
+              >
+                <NuxtLink :to="project.url" target="_blank">
+                  <img class="h-40 w-full object-cover" :src="project.image" alt="" />
+                  <p class="text-center py-2 font-semibold bg-orange-50 text-orange-500">{{ project.title }}</p>
+                </NuxtLink>
+              </div>
+            </SwiperSlide>
+          </Swiper>
           <button
             slot="container-end"
             aria-label="slider-left"
-            class="image-prev absolute flex rounded-full z-20 left-4 top-1/2 -mt-6 bg-white"
+            class="image-prev absolute flex rounded-full z-20 -left-2 top-1/2 -mt-6 bg-white"
           >
             <div class="i-ion-md-arrow-dropleft-circle text-4xl text-orange-400 hover:text-orange-500 transition"></div>
           </button>
           <button
             slot="container-end"
             aria-label="slider-right"
-            class="image-next absolute flex rounded-full z-20 right-4 top-1/2 -mt-6 bg-white"
+            class="image-next absolute flex rounded-full z-20 -right-2 top-1/2 -mt-6 bg-white"
           >
             <div
               class="i-ion-md-arrow-dropright-circle text-4xl text-orange-400 hover:text-orange-500 transition"
             ></div>
           </button>
-        </Swiper>
+        </div>
       </section>
     </ClientOnly>
   </div>
