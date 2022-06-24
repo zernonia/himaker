@@ -6,12 +6,14 @@ const {
 const goTo = (child: string) => {
   navigateTo(`/dashboard/widget/${id}/${child}`)
 }
+const widget = useWidgetStore()
 </script>
 
 <template>
   <div>
     <div class="w-full h-64 rounded-2xl bg-orange-50 flex items-center justify-center">
       this will be the preview for {{ id }}
+      <div>{{ widget }}</div>
     </div>
 
     <div class="flex mt-8">

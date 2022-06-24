@@ -12,6 +12,7 @@
     "nuxt-windicss": "^2.4.2"
   },
   "dependencies": {
+    "@vueuse/core": "^8.7.5",
     "metadata-scraper": "^0.2.56",
     "primeicons": "^5.0.0",
     "primevue": "^3.15.0",
