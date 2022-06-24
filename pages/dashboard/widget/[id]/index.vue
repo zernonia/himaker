@@ -15,19 +15,14 @@ const addImage = () => {
 const deleteImage = (index: number) => {
   images.value.splice(index, 1)
 }
-const pickFile = (el: HTMLInputElement) => {
-  let files = el.files as FileList
-  if (files.length) {
-    for (let i = 0; i < files.length; i++) {
-      let reader = new FileReader()
-      reader.onload = async (e) => {
-        const result = e.target?.result as string
-        let r = (Math.random() + 1).toString(36).substring(7)
-        console.log({ result })
-      }
-      reader.readAsDataURL(files[i])
-    }
-  }
+const clickUpload = (ev: Event) => {
+  const div = ev.target as HTMLDivElement
+  const input = (div.querySelector("input") as HTMLInputElement) || (div.nextSibling as HTMLInputElement)
+
+  input?.click()
+}
+const setImage = (ev: string, index: number) => {
+  images.value[index] = ev
 }
 </script>
 
@@ -58,8 +53,12 @@ const pickFile = (el: HTMLInputElement) => {
         <Draggable v-for="(item, i) in images" :key="i">
           <div class="my-4 mx-2 flex flex-col items-center">
             <Handle horizontal @delete="deleteImage(i)"></Handle>
-            <div class="w-36 h-36 my-2 overflow-hidden rounded-full bg-white border border-teal-400">
+            <div
+              @click="clickUpload"
+              class="w-36 h-36 my-2 overflow-hidden rounded-full bg-white border border-teal-400 cursor-pointer"
+            >
               <img v-if="item" class="w-full h-full object-cover" :src="item" :alt="item" />
+              <Upload @done="setImage($event, i)"></Upload>
             </div>
             <InputText v-model="images[i]"></InputText>
           </div>

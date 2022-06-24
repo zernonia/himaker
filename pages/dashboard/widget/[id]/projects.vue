@@ -12,8 +12,10 @@ const fetchMeta = (ev: FocusEvent, index: number) => {
       link: url,
     },
   }).then((response) => {
-    projects.value[index].image = response.image
-    console.log({ url, response })
+    if (projects.value[index].image === "") {
+      projects.value[index].image = response.image
+      console.log({ url, response })
+    }
   })
 }
 
@@ -26,6 +28,15 @@ const addProject = () => {
 }
 const deleteProject = (index: number) => {
   projects.value.splice(index, 1)
+}
+const clickUpload = (ev: Event) => {
+  const div = ev.target as HTMLDivElement
+  const input = (div.querySelector("input") as HTMLInputElement) || (div.nextSibling as HTMLInputElement)
+
+  input?.click()
+}
+const setImage = (ev: string, index: number) => {
+  projects.value[index].image = ev
 }
 </script>
 
@@ -41,8 +52,12 @@ const deleteProject = (index: number) => {
               <Handle horizontal @delete="deleteProject(i)"></Handle>
 
               <div class="w-full flex flex-col items-center space-y-4">
-                <div class="w-72 h-40 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300">
-                  <img class="h-full w-full object-cover" :src="item.image" alt="" />
+                <div
+                  @click="clickUpload"
+                  class="w-72 h-40 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300 cursor-pointer"
+                >
+                  <img class="h-full w-full object-cover" v-if="item.image" :src="item.image" alt="" />
+                  <Upload @done="setImage($event, i)"></Upload>
                 </div>
 
                 <div class="w-full flex flex-col form">
