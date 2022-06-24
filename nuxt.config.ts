@@ -17,11 +17,13 @@ export default defineNuxtConfig({
       }),
     ],
     safelist: [
+      "i-ion-link",
       "i-ion-logo-twitter",
       "i-ion-logo-facebook",
       "i-ion-logo-instagram",
       "i-ion-logo-pinterest",
       "i-ion-logo-github",
+      "i-ion-logo-dribbble",
     ],
   },
 })

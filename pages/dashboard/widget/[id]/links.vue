@@ -15,18 +15,30 @@ const deleteLink = (index: number) => {
 }
 
 const iconOptions = ref([
+  { name: "Link", value: "link" },
   { name: "Twitter", value: "twitter" },
   { name: "Facebook", value: "facebook" },
   { name: "Instagram", value: "instagram" },
   { name: "Pinterest", value: "pinterest" },
   { name: "GitHub", value: "github" },
+  { name: "Dribbble", value: "dribbble" },
 ])
+
+const mapIcon = {
+  link: "i-ion-link",
+  twitter: "i-ion-logo-twitter",
+  facebook: "i-ion-logo-facebook",
+  instagram: "i-ion-logo-instagram",
+  pinterest: "i-ion-logo-pinterest",
+  github: "i-ion-logo-github",
+  dribbble: "i-ion-logo-dribbble",
+}
 </script>
 
 <template>
   <div class="p-6 w-full bg-gray-50 rounded-xl flex flex-col form">
-    <label for="maker_links">Title</label>
-    <InputText v-model="widget.links[0].title" id="maker_links" name="maker_links" placeholder="Zernonia"></InputText>
+    <!-- <label for="maker_links">Title</label>
+    <InputText v-model="widget.links[0].title" id="maker_links" name="maker_links" placeholder="Zernonia"></InputText> -->
 
     <h3>Social Link</h3>
 
@@ -40,14 +52,17 @@ const iconOptions = ref([
               <Dropdown class="w-186px" :options="iconOptions" optionValue="value" v-model="list[i].icon">
                 <template #value="slotProps">
                   <div v-if="slotProps.value" class="flex items-center h-19px">
-                    <div :class="`i-ion-logo-${slotProps.value} mr-2 text-xl`"></div>
+                    <div :class="`${mapIcon[slotProps.value]} mr-2 text-xl`"></div>
                     <p>{{ iconOptions.find((i) => i.value === slotProps.value).name }}</p>
                   </div>
-                  <div v-else class="h-19px">Icon</div>
+                  <div v-else class="flex items-center h-19px">
+                    <div class="i-ion-link mr-2 text-xl"></div>
+                    <p>Link</p>
+                  </div>
                 </template>
                 <template #option="slotProps">
                   <div class="flex items-center">
-                    <div :class="`i-ion-logo-${slotProps.option.value} mr-2 text-xl`"></div>
+                    <div :class="`${mapIcon[slotProps.option.value]} mr-2 text-xl`"></div>
                     <p>{{ slotProps.option.name }}</p>
                   </div>
                 </template>

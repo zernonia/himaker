@@ -42,7 +42,7 @@ const deleteProject = (index: number) => {
 
               <div class="w-full flex flex-col items-center space-y-4">
                 <div class="w-72 h-40 flex-shrink-0 bg-white rounded-xl overflow-hidden border border-gray-300">
-                  <img class="h-full object-cover" :src="item.image" alt="" />
+                  <img class="h-full w-full object-cover" :src="item.image" alt="" />
                 </div>
 
                 <div class="w-full flex flex-col form">

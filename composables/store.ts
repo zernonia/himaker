@@ -6,14 +6,14 @@ export const useWidgetStore = () =>
       title: "",
       headline: "",
       name: "",
-      images: ["https://avatars.githubusercontent.com/u/59365435?v=4"],
+      images: [""],
     },
     links: [
       {
         title: "",
         list: [
           {
-            icon: "",
+            icon: "link",
             title: "",
             url: "",
           },

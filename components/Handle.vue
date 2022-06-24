@@ -21,6 +21,7 @@ const items = ref<MenuItem[]>([
     :class="{ 'transform rotate-90': horizontal }"
     @click="menu.toggle"
     @contextmenu="menu.toggle"
+    tabindex="-1"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
