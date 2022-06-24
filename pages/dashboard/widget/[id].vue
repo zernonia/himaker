@@ -2,6 +2,8 @@
 const {
   params: { id },
 } = useRoute()
+const { path } = toRefs(useRoute())
+
 const goTo = (child: string) => {
   navigateTo(`/dashboard/widget/${id}/${child}`)
 }
@@ -23,14 +25,40 @@ onMounted(async () => {
   if (data) widget.value = data.payload
   tick.value = "1"
 })
+
+const isOpen = ref(false)
+const childPath = computed(() => path.value.split(`${id}`)[1])
+const previewEl = ref<HTMLDivElement>()
+watch(childPath, (n) => {
+  let selector = n.replace("/", "")
+  selector = selector == "" ? "#heading" : "#" + selector
+
+  let section = previewEl.value.querySelector(selector)
+  const headerOffset = selector === "#projects" ? 100 : 130
+  const top = section?.getBoundingClientRect().top
+  const offsetPosition = top + previewEl.value.scrollTop - headerOffset
+  console.log({ top, offsetPosition })
+
+  previewEl.value.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  })
+})
 </script>
 
 <template>
   <div>
-    <div class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border">
-      <div class="preview absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
-        <Widget :widget="widget"></Widget>
+    <div class="relative">
+      <div
+        ref="previewEl"
+        class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border transition-all ease-in-out duration-700"
+        :class="{ 'h-screen-md': isOpen }"
+      >
+        <div class="absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
+          <Widget :widget="widget"></Widget>
+        </div>
       </div>
+      <Button label="Preview" class="!absolute top-4 right-6" @click="isOpen = !isOpen"></Button>
     </div>
 
     <div class="flex mt-8">

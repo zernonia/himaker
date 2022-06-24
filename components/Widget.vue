@@ -42,8 +42,10 @@ const modules = [Navigation]
       </NuxtLink>
     </section>
 
+    <div class="my-4" />
+
     <ClientOnly>
-      <section id="projects" class="mt-8 flex flex-col items-center">
+      <section id="projects" class="flex flex-col items-center">
         <Divider align="center">
           <span>Projects</span>
         </Divider>
