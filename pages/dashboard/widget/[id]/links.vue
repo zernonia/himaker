@@ -11,7 +11,7 @@ const addLink = () => {
   })
 }
 const deleteLink = (index: number) => {
-  console.log("deleteing " + index)
+  list.value.splice(index, 1)
 }
 
 const iconOptions = ref([

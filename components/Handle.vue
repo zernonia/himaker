@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import type { MenuItem } from "primevue/menuitem"
 
+const props = defineProps({
+  horizontal: Boolean,
+})
 const emits = defineEmits(["delete"])
 const menu = ref()
 const items = ref<MenuItem[]>([
@@ -15,6 +18,7 @@ const items = ref<MenuItem[]>([
 <template>
   <button
     class="mr-2 py-1 text-gray-400 hover:text-gray-800 handle bg-transparent hover:bg-gray-200 transition rounded"
+    :class="{ 'transform rotate-90': horizontal }"
     @click="menu.toggle"
     @contextmenu="menu.toggle"
   >

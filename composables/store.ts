@@ -6,7 +6,7 @@ export const useWidgetStore = () =>
       title: "",
       headline: "",
       name: "",
-      images: [""],
+      images: ["https://avatars.githubusercontent.com/u/59365435?v=4"],
     },
     links: [
       {
