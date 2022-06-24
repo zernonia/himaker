@@ -7,7 +7,10 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@iconify-json/ion": "^1.1.2",
     "@nuxtjs/supabase": "^0.1.17",
+    "@unocss/nuxt": "^0.39.3",
+    "@unocss/preset-icons": "^0.39.3",
     "nuxt": "3.0.0-rc.4",
     "nuxt-windicss": "^2.4.2"
   },

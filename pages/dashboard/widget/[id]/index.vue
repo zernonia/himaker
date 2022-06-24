@@ -25,14 +25,17 @@ const { onDrop, applyDrag } = useDnd(images)
     <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="Supabase ⚡️"></InputText>
 
     <h3>Images</h3>
-    <Container orientation="vertical" @drop="onDrop">
-      <Draggable v-for="(item, i) in images" :key="i">
-        <div class="mb-4">
-          <div class="w-20 h-20 rounded-full bg-white">
-            {{ item }}
+    <div class="flex w-full">
+      <div class="mt-4 mr-2 w-36 h-36 flex-shrink-0 rounded-full bg-white"></div>
+      <Container style="width: max-content; overflow-x: auto" orientation="horizontal" @drop="onDrop">
+        <Draggable v-for="(item, i) in images" :key="i">
+          <div class="my-4 mx-2">
+            <div class="w-36 h-36 rounded-full bg-white">
+              {{ item }}
+            </div>
           </div>
-        </div>
-      </Draggable>
-    </Container>
+        </Draggable>
+      </Container>
+    </div>
   </div>
 </template>

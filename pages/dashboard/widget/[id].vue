@@ -17,14 +17,14 @@ const widget = useWidgetStore()
     </div>
 
     <div class="flex mt-8">
-      <div class="flex flex-col items-start space-y-4 w-48">
+      <div class="flex flex-col items-start space-y-4 flex-shrink-0 w-1/5">
         <button @click="goTo('')">Heading</button>
         <button @click="goTo('links')">Links</button>
         <button @click="goTo('projects')">Projects</button>
         <button @click="goTo('etc')">Etc</button>
       </div>
 
-      <div class="ml-8 w-full">
+      <div class="w-4/5">
         <ClientOnly>
           <NuxtPage></NuxtPage>
         </ClientOnly>
