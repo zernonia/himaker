@@ -16,6 +16,13 @@ input[type="color"]::-webkit-color-swatch {
   border: none;
 }
 
+.himaker-panel {
+  @apply fixed overflow-x-hidden bottom-20 left-4 w-84 h-[600px] shadow-xl rounded-xl;
+}
+.himaker-trigger {
+  @apply fixed bottom-4 left-4 w-48 h-12 overflow-hidden shadow cursor-pointer rounded-xl;
+}
+
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.3s ease-in-out;

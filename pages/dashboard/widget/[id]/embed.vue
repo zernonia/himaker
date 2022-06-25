@@ -6,7 +6,10 @@ const {
 } = useRoute()
 
 const codeString = computed(
-  () => `<script \n src="https://www.himaker.io/scripts/embed.js" \n async \n defer \n data-widget-id="${id}" \n>`
+  () =>
+    `<script \n src="https://www.himaker.io/scripts/embed.js" \n async \n defer \n data-widget-id="${id}" \n>` +
+    `</` +
+    "script>"
 )
 const { copy, copied } = useClipboard({ source: codeString })
 const clickCopy = () => {

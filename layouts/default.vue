@@ -20,5 +20,7 @@ await useLazyAsyncData(
   <div class="p-8 max-w-screen-lg mx-auto">
     <Header></Header>
     <NuxtPage class="mt-8"></NuxtPage>
+
+    <Script src="/scripts/embed.js" data-widget-id="p4ueqrlg" async defer data-placement="left"></Script>
   </div>
 </template>

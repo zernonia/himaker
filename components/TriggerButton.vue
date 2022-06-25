@@ -20,7 +20,7 @@ const startInterval = () => {
 }
 
 onMounted(() => {
-  // startInterval()
+  startInterval()
 })
 </script>
 

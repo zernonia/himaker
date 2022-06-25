@@ -8,10 +8,14 @@ const client = useSupabaseClient()
 const menu = ref()
 const items = ref<MenuItem[]>([
   {
+    label: "Home",
+    icon: "pi pi-fw pi-home",
+    to: "/",
+  },
+  {
     label: "Settings",
     icon: "pi pi-fw pi-user",
     to: "/dashboard/settings",
-    command: (ev) => ({}),
   },
   {
     label: "Pro",
