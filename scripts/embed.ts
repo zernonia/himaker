@@ -20,6 +20,7 @@ window.onload = function () {
     box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
     left: 1rem;
     position: fixed;
+    overflow: hidden;
 } 
 .himaker-panel {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.1);
