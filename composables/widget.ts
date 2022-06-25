@@ -1,4 +1,4 @@
-import { Widget } from "interface"
+import { Widget, WidgetInfo } from "interface"
 
 const initialState: Widget = {
   heading: {
@@ -35,6 +35,7 @@ const initialState: Widget = {
 }
 
 export const useWidgetStore = () => useState<Widget>("widget", () => initialState)
+export const useWidgetListStore = () => useState<WidgetInfo[]>("widget-list", () => [])
 
 export const useWidgetClear = () => {
   const widget = useWidgetStore()

@@ -2,12 +2,21 @@
 import { WidgetInfo } from "interface"
 
 const client = useSupabaseClient()
+const widgetList = useWidgetListStore()
 
 const { data, pending, refresh } = await useLazyAsyncData(
   "widget-list",
   async () => {
-    const { data } = await client.from<WidgetInfo>("widgets").select("*").order("created_at", { ascending: true })
-    return data
+    const { data, error } = await client
+      .from<WidgetInfo>("widgets")
+      .select("*")
+      .order("created_at", { ascending: true })
+    if (data) {
+      widgetList.value = data
+      return data
+    } else {
+      throw new Error(error.message)
+    }
   },
   { server: false }
 )

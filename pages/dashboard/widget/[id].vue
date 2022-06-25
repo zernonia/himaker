@@ -8,6 +8,7 @@ const goTo = (child: string) => {
   navigateTo(`/dashboard/widget/${id}/${child}`)
 }
 const widget = useWidgetStore()
+const widgetList = useWidgetListStore()
 const client = useSupabaseClient()
 const user = useSupabaseUser()
 
@@ -23,11 +24,16 @@ const tick = ref("0")
 const { clear } = useWidgetClear()
 onMounted(async () => {
   clear()
-  const { data, error } = await client.from("widgets").select("*").eq("id", id).single()
-  if (data) widget.value = data.payload
-  if (error) {
-    widget.value.heading.name = user.value.user_metadata.full_name
-    widget.value.heading.images[0] = user.value.user_metadata.avatar_url
+  const w = widgetList.value.find((i) => i.id === id)
+  if (w) {
+    widget.value = w.payload
+  } else {
+    const { data, error } = await client.from("widgets").select("*").eq("id", id).single()
+    if (data) widget.value = data.payload
+    if (error) {
+      widget.value.heading.name = user.value.user_metadata.full_name
+      widget.value.heading.images[0] = user.value.user_metadata.avatar_url
+    }
   }
   tick.value = "1"
 })
