@@ -1,6 +1,6 @@
 <script setup lang="ts">
 //@ts-ignore
-import Logo from "/logo.svg"
+import Logo from "~/assets/images/logo.png"
 import type { MenuItem } from "primevue/menuitem"
 
 const user = useSupabaseUser()

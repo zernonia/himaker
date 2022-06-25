@@ -1,4 +1,6 @@
 <script setup lang="ts">
+//@ts-ignore
+import Logo from "~/assets/images/logo.png"
 import { PropType } from "vue"
 import { Widget } from "interface"
 import { mapIcon } from "mapping"
@@ -100,6 +102,25 @@ const modules = [Navigation]
             class="i-ion-md-arrow-dropright-circle text-4xl transition"
           ></div>
         </button>
+      </div>
+    </section>
+
+    <section id="footer" class="mt-8 mb-4">
+      <div class="w-full text-sm flex items-center justify-center group">
+        <img
+          class="w-6 h-6 transform -rotate-5 group-hover:-rotate-15 transition mr-4"
+          :src="Logo"
+          alt="hi Maker's logo"
+        />
+        <h4>
+          Powered by
+          <NuxtLink
+            target="_blank"
+            class="text-primary hover:text-primary-hover transition font-semibold"
+            to="https://himaker.io"
+            >hi Maker</NuxtLink
+          >
+        </h4>
       </div>
     </section>
   </div>
