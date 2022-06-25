@@ -30,7 +30,7 @@ const initialState: Widget = {
     dark_mode: false,
     bg_primary: "#181411",
     text_primary: "#00ddb3",
-    text_secondary: "#202020",
+    text_secondary: "#ffffff",
   },
 }
 

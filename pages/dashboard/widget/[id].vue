@@ -75,8 +75,8 @@ const gopro = () => {}
         class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border border-dark-500 ring ring-dark-500 transition-all ease-in-out duration-700"
         :class="{ 'h-screen-md': isOpen }"
       >
-        <div class="absolute top-4 left-4 text-2xl font-semibold opacity-20">
-          {{ widget.heading.title !== "" ? widget.heading.title : "Title of this widget" }}
+        <div class="absolute top-4 left-4">
+          <TriggerButton :widget="widget"></TriggerButton>
         </div>
         <div class="absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
           <Widget :widget="widget"></Widget>

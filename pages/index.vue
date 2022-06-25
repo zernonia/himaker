@@ -4,7 +4,7 @@
   <div>
     home
 
-    <Script src="/scripts/embed.js" data-widget-id="p4ueqrlg" data-placement="left" type="module"></Script>
+    <Script src="/scripts/embed.js" data-widget-id="p4ueqrlg" async defer data-placement="left" type="module"></Script>
   </div>
 </template>
 

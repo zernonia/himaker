@@ -14,7 +14,7 @@ const modules = [Navigation]
 </script>
 
 <template>
-  <div class="w-84 rounded-2xl shadow-2xl p-6 bg-white">
+  <div class="w-84 rounded-2xl shadow-2xl p-6 bg-white border">
     <section id="heading" class="flex flex-col items-center">
       <div class="flex py-4">
         <img
