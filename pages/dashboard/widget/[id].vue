@@ -106,7 +106,7 @@ const gopro = () => {}
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/' }"
           @click="goTo('')"
         >
-          <div class="i-ion-md-person text-xl mr-2"></div>
+          <div class="i-ion-person-outline text-xl mr-2"></div>
           Heading
         </button>
         <button
@@ -127,14 +127,22 @@ const gopro = () => {}
         </button>
         <button
           class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
-          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/etc' }"
-          @click="goTo('etc')"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/embed' }"
+          @click="goTo('embed')"
         >
-          <div class="i-ion-medical-outline text-xl mr-2"></div>
-          Etc
+          <div class="i-ion-md-code text-xl mr-2"></div>
+          Embed
+        </button>
+        <button
+          class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/settings' }"
+          @click="goTo('settings')"
+        >
+          <div class="i-ion-settings-outline text-xl mr-2"></div>
+          Settings
         </button>
 
-        <Button @click="gopro" class="w-full p-button-secondary" label="Go Pro ✨" iconPos="right"></Button>
+        <!-- <Button @click="gopro" class="w-full p-button-secondary" label="Go Pro ✨" iconPos="right"></Button> -->
       </div>
 
       <div class="w-4/5">

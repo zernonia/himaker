@@ -3,7 +3,7 @@ html {
 }
 label,
 h3 {
-  @apply font-medium text-dark-500;
+  @apply font-semibold text-dark-500;
 }
 input[type="color"] {
   -webkit-appearance: none;
