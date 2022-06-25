@@ -8,7 +8,7 @@ export default defineNuxtConfig({
     interface: fileURLToPath(new URL("./utils/interface", import.meta.url)),
     mapping: fileURLToPath(new URL("./utils/map", import.meta.url)),
   },
-  css: ["~/assets/main.css"],
+  css: ["~/assets/main.css", "~/assets/custom.css"],
   modules: ["nuxt-windicss", "@nuxtjs/supabase", "@unocss/nuxt"],
   unocss: {
     icons: true,

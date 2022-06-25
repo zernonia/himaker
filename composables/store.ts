@@ -28,9 +28,9 @@ const initialState: Widget = {
   ],
   style: {
     dark_mode: false,
-    bg_primary: "#FFF7ED",
-    text_primary: "#F97317",
-    text_secondary: "#F97317",
+    bg_primary: "#181411",
+    text_primary: "#701bee",
+    text_secondary: "#ffffff",
   },
 }
 

@@ -3,6 +3,6 @@
 <template>
   <div>
     home
-    <Script src="../scripts/boop.ts"></Script>
+    <Script src="/boop.ts"></Script>
   </div>
 </template>

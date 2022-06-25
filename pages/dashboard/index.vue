@@ -3,7 +3,7 @@ import { WidgetInfo } from "interface"
 
 const client = useSupabaseClient()
 
-const { data, pending } = await useLazyAsyncData(
+const { data, pending, refresh } = await useLazyAsyncData(
   "widget-list",
   async () => {
     const { data } = await client.from<WidgetInfo>("widgets").select("*").order("created_at", { ascending: true })
@@ -16,14 +16,17 @@ const addWidget = () => {
   const id = (Math.random() + 1).toString(36).substring(4)
   navigateTo(`/dashboard/widget/${id}`)
 }
+
+refresh()
 </script>
 
 <template>
   <div>
-    <Button class="!mb-4" @click="addWidget">Add widget</Button>
+    <Button class="!mb-4" label="Add widget" icon="pi pi-plus" iconPos="right" @click="addWidget"></Button>
 
-    <div v-for="info in data" class="mb-6">
-      <NuxtLink :to="`/dashboard/widget/${info.id}`">
+    <div v-if="pending && !data?.length">Loading..</div>
+    <div v-else v-for="info in data" class="mb-6">
+      <NuxtLink :to="`/dashboard/widget/${info.id}/`">
         <div
           class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-hidden border transition ring-2 ring-transparent hover:border-gray-300 hover:ring-teal-200"
         >

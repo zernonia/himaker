@@ -56,7 +56,7 @@ watch(childPath, (n, o) => {
   <div>
     <NuxtLink
       to="/dashboard"
-      class="flex items-center mb-4 px-2 py-2 w-max text-left rounded-lg bg-transparent hover:bg-gray-100 transition"
+      class="flex items-center mb-4 px-6 py-3 w-max text-left rounded-lg bg-transparent hover:bg-gray-100 transition"
     >
       <div class="i-ion-md-arrow-dropleft text-2xl mr-2"></div>
       Dashboard</NuxtLink
@@ -83,7 +83,14 @@ watch(childPath, (n, o) => {
 
     <div class="flex mt-8">
       <div class="flex flex-col items-start space-y-2 flex-shrink-0 w-1/5">
-        <Button @click="save" icon="pi pi-save" :loading="isSaving" label="Save" iconPos="right"></Button>
+        <Button
+          @click="save"
+          icon="pi pi-save"
+          class="w-full"
+          :loading="isSaving"
+          label="Save"
+          iconPos="right"
+        ></Button>
 
         <h5 class="font-bold text-gray-400 !mt-8">Setup</h5>
         <button
@@ -91,7 +98,7 @@ watch(childPath, (n, o) => {
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/' }"
           @click="goTo('')"
         >
-          <div class="i-ion-md-person text-2xl mr-2"></div>
+          <div class="i-ion-md-person text-xl mr-2"></div>
           Heading
         </button>
         <button
@@ -99,7 +106,7 @@ watch(childPath, (n, o) => {
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/links' }"
           @click="goTo('links')"
         >
-          <div class="i-ion-link text-2xl mr-2"></div>
+          <div class="i-ion-link text-xl mr-2"></div>
           Links
         </button>
         <button
@@ -107,7 +114,7 @@ watch(childPath, (n, o) => {
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/projects' }"
           @click="goTo('projects')"
         >
-          <div class="i-ion-rocket-outline text-2xl mr-2"></div>
+          <div class="i-ion-rocket-outline text-xl mr-2"></div>
           Projects
         </button>
         <button
@@ -115,7 +122,7 @@ watch(childPath, (n, o) => {
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/etc' }"
           @click="goTo('etc')"
         >
-          <div class="i-ion-medical-outline text-2xl mr-2"></div>
+          <div class="i-ion-medical-outline text-xl mr-2"></div>
           Etc
         </button>
       </div>

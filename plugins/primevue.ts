@@ -7,7 +7,6 @@ import ContextMenu from "primevue/contextmenu"
 import OverlayPanel from "primevue/overlaypanel"
 import Divider from "primevue/divider"
 
-import "primevue/resources/themes/lara-light-teal/theme.css"
 import "primevue/resources/primevue.css"
 import "primeicons/primeicons.css"
 
