@@ -41,7 +41,8 @@ export const useWidgetClear = () => {
   const widget = useWidgetStore()
 
   const clear = () => {
-    widget.value = initialState
+    Object.assign(widget.value, initialState)
+    console.log("clearing", widget.value.projects[0])
   }
   return {
     clear,
