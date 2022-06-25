@@ -27,6 +27,15 @@ input[type="color"]::-webkit-color-swatch {
   transform: translateX(30px);
   opacity: 0;
 }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 
 .form input {
   @apply mt-1 mb-4;
@@ -38,4 +47,19 @@ input[type="color"]::-webkit-color-swatch {
 
 .swiper-button-disabled {
   @apply opacity-80 transition;
+}
+
+.custom .p-scrollpanel-bar {
+  background-color: white;
+  opacity: 1;
+  transition: background-color 0.3s;
+}
+.custom .p-scrollpanel-content {
+  padding: 0 18px 0px 0;
+}
+.custom .p-scrollpanel-bar:hover {
+  background-color: #00ddb3;
+}
+.custom .p-scrollpanel-bar-x {
+  display: none;
 }

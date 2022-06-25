@@ -6,6 +6,7 @@ import Menu from "primevue/menu"
 import ContextMenu from "primevue/contextmenu"
 import OverlayPanel from "primevue/overlaypanel"
 import Divider from "primevue/divider"
+import ScrollPanel from "primevue/scrollpanel"
 
 import "primevue/resources/primevue.css"
 import "primeicons/primeicons.css"
@@ -19,4 +20,5 @@ export default defineNuxtPlugin((nuxt) => {
   nuxt.vueApp.component("ContextMenu", ContextMenu)
   nuxt.vueApp.component("OverlayPanel", OverlayPanel)
   nuxt.vueApp.component("Divider", Divider)
+  nuxt.vueApp.component("ScrollPanel", ScrollPanel)
 })

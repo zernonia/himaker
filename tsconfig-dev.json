@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "public/scripts/",
+    "lib": ["es2016", "dom"]
+  },
+  "include": ["scripts/embed.ts"]
+}
