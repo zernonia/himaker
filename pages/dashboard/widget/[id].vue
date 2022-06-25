@@ -60,16 +60,40 @@ watch(childPath, (n) => {
     </div>
 
     <div class="flex mt-8">
-      <div class="flex flex-col items-start space-y-4 flex-shrink-0 w-1/5">
-        <button @click="goTo('')">Heading</button>
-        <button @click="goTo('links')">Links</button>
-        <button @click="goTo('projects')">Projects</button>
-        <button @click="goTo('etc')">Etc</button>
+      <div class="flex flex-col items-start space-y-2 flex-shrink-0 w-1/5">
+        <button
+          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500': childPath === '/' }"
+          @click="goTo('')"
+        >
+          Heading
+        </button>
+        <button
+          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500': childPath === '/links' }"
+          @click="goTo('links')"
+        >
+          Links
+        </button>
+        <button
+          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500': childPath === '/projects' }"
+          @click="goTo('projects')"
+        >
+          Projects
+        </button>
+        <button
+          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500': childPath === '/etc' }"
+          @click="goTo('etc')"
+        >
+          Etc
+        </button>
 
         <Button @click="save" icon="pi pi-save" :loading="isSaving" label="Save" iconPos="right"></Button>
       </div>
 
-      <div class="w-4/5">
+      <div class="w-4/5 ml-4">
         <ClientOnly>
           <NuxtPage class="border" :key="tick"></NuxtPage>
         </ClientOnly>
