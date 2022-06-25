@@ -9,6 +9,7 @@ const props = defineProps({
 })
 
 const images = computed(() => props.widget.heading.images.filter((i) => i))
+const projects = computed(() => props.widget.projects.filter((i) => i.image))
 const modules = [Navigation]
 </script>
 
@@ -17,18 +18,20 @@ const modules = [Navigation]
     <section id="heading" class="flex flex-col items-center">
       <div class="flex py-4">
         <img
+          v-if="images.length"
           v-for="(image, i) in images"
           :src="image"
           class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10"
           :class="[i > 0 ? `-ml-${2 + images.length * 3}` : '']"
           :style="`z-index: ${10 - i}`"
         />
+        <div v-else class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10" />
       </div>
       <h3 class="mt-4 text-lg">
         {{ widget.heading.headline !== "" ? widget.heading.headline : "This project is made by" }}
       </h3>
       <h2 :style="`color: ${widget.style.text_primary}`" class="font-semibold text-2xl transition">
-        {{ widget.heading.name ?? "Zernonia" }}
+        {{ widget.heading.name !== "" ? widget.heading.name : "hiMaker" }}
       </h2>
     </section>
 
@@ -47,13 +50,13 @@ const modules = [Navigation]
 
     <div class="my-4" />
 
-    <ClientOnly>
-      <section id="projects" class="flex flex-col items-center">
-        <Divider align="center">
-          <span>Projects</span>
-        </Divider>
+    <section id="projects" class="flex flex-col items-center">
+      <Divider align="center">
+        <span>Projects</span>
+      </Divider>
 
-        <div class="relative w-full">
+      <div class="relative w-full">
+        <ClientOnly>
           <Swiper
             :navigation="{ nextEl: '.image-next', prevEl: '.image-prev' }"
             :slidesPerView="1.3"
@@ -61,7 +64,7 @@ const modules = [Navigation]
             class="w-full"
             :modules="modules"
           >
-            <SwiperSlide v-for="project in widget.projects">
+            <SwiperSlide v-for="project in projects">
               <div
                 :style="`border-color: ${widget.style.bg_primary}; background: ${widget.style.bg_primary}`"
                 class="ml-1 w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
@@ -75,28 +78,28 @@ const modules = [Navigation]
               </div>
             </SwiperSlide>
           </Swiper>
-          <button
-            slot="container-end"
-            aria-label="slider-left"
-            class="image-prev absolute flex rounded-full z-20 -left-2 top-1/2 -mt-6 bg-white"
-          >
-            <div
-              :style="`color: ${widget.style.text_primary}`"
-              class="i-ion-md-arrow-dropleft-circle text-4xl transition"
-            ></div>
-          </button>
-          <button
-            slot="container-end"
-            aria-label="slider-right"
-            class="image-next absolute flex rounded-full z-20 -right-2 top-1/2 -mt-6 bg-white"
-          >
-            <div
-              :style="`color: ${widget.style.text_primary}`"
-              class="i-ion-md-arrow-dropright-circle text-4xl transition"
-            ></div>
-          </button>
-        </div>
-      </section>
-    </ClientOnly>
+        </ClientOnly>
+        <button
+          slot="container-end"
+          aria-label="slider-left"
+          class="image-prev absolute flex rounded-full z-20 -left-2 top-1/2 -mt-6 bg-white"
+        >
+          <div
+            :style="`color: ${widget.style.text_primary}`"
+            class="i-ion-md-arrow-dropleft-circle text-4xl transition"
+          ></div>
+        </button>
+        <button
+          slot="container-end"
+          aria-label="slider-right"
+          class="image-next absolute flex rounded-full z-20 -right-2 top-1/2 -mt-6 bg-white"
+        >
+          <div
+            :style="`color: ${widget.style.text_primary}`"
+            class="i-ion-md-arrow-dropright-circle text-4xl transition"
+          ></div>
+        </button>
+      </div>
+    </section>
   </div>
 </template>

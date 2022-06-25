@@ -29,12 +29,17 @@ onMounted(async () => {
 const isOpen = ref(false)
 const childPath = computed(() => path.value.split(`${id}`)[1])
 const previewEl = ref<HTMLDivElement>()
-watch(childPath, (n) => {
+const { clear } = useWidgetClear()
+watch(childPath, (n, o) => {
+  if (!n) {
+    clear()
+    return
+  }
   let selector = n.replace("/", "")
   selector = selector == "" ? "#heading" : "#" + selector
 
   let section = previewEl.value.querySelector(selector)
-  const headerOffset = selector === "#projects" ? 100 : 130
+  const headerOffset = selector === "#projects" ? 150 : 180
   const top = section?.getBoundingClientRect().top
   const offsetPosition = top + previewEl.value.scrollTop - headerOffset
   previewEl.value.scrollTo({
@@ -46,6 +51,13 @@ watch(childPath, (n) => {
 
 <template>
   <div>
+    <NuxtLink
+      to="/dashboard"
+      class="flex items-center mb-4 px-2 py-2 w-max text-left rounded-lg bg-transparent hover:bg-gray-100 transition"
+    >
+      <div class="i-ion-md-arrow-dropleft text-2xl mr-2"></div>
+      Dashboard</NuxtLink
+    >
     <div class="relative">
       <div
         ref="previewEl"

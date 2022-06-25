@@ -63,7 +63,7 @@ const setImage = (ev: string, index: number) => {
               <img v-if="item" class="w-full h-full object-cover" :src="item" :alt="item" />
               <Upload @done="setImage($event, i)"></Upload>
             </div>
-            <InputText v-model="images[i]"></InputText>
+            <InputText placeholder="https://<image>.com" v-model="images[i]"></InputText>
           </div>
         </Draggable>
       </Container>
