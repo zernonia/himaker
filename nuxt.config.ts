@@ -29,4 +29,7 @@ export default defineNuxtConfig({
       "i-ion-logo-dribbble",
     ],
   },
+  build: {
+    transpile: ["primevue"],
+  },
 })
