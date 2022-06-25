@@ -14,7 +14,6 @@ const fetchMeta = (ev: FocusEvent, index: number) => {
   }).then((response) => {
     if (projects.value[index].image === "") {
       projects.value[index].image = response.image
-      console.log({ url, response })
     }
   })
 }
