@@ -1,6 +1,6 @@
 window.onload = function () {
+  console.log("hi")
   const loc = location.href
-  console.log(loc)
   if (loc.includes("widget")) return
   let boopElement = document.querySelectorAll("[data-boop-ink]")
   if (!boopElement) return

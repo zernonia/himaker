@@ -3,6 +3,7 @@
 <template>
   <div>
     home
-    <Script src="/boop.ts"></Script>
+
+    <Script src="/scripts/embed.ts" type="module"></Script>
   </div>
 </template>
