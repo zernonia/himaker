@@ -1,6 +1,29 @@
 html {
   font-size: 14px;
 }
+input[type="color"] {
+  -webkit-appearance: none;
+  @apply cursor-pointer border-1 focus:outline-transparent w-12 h-12 rounded-full overflow-hidden;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.2s;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(30px);
+  opacity: 0;
+}
+
 .form input {
   @apply mt-1 mb-4;
 }

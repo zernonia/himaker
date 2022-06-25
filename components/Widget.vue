@@ -19,15 +19,17 @@ const modules = [Navigation]
         <img
           v-for="(image, i) in images"
           :src="image"
-          class="w-26 h-26 flex-shrink-0 border-3 rounded-full !hover:z-10"
-          :class="[i > 0 ? `-ml-${2 + images.length * 2}` : '']"
+          class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10"
+          :class="[i > 0 ? `-ml-${2 + images.length * 3}` : '']"
           :style="`z-index: ${10 - i}`"
         />
       </div>
       <h3 class="mt-4 text-lg">
         {{ widget.heading.headline !== "" ? widget.heading.headline : "This project is made by" }}
       </h3>
-      <h2 class="text-orange-500 font-semibold text-2xl">{{ widget.heading.name ?? "Zernonia" }}</h2>
+      <h2 :style="`color: ${widget.style.text_primary}`" class="font-semibold text-2xl transition">
+        {{ widget.heading.name ?? "Zernonia" }}
+      </h2>
     </section>
 
     <section id="links" class="mt-8">
@@ -35,7 +37,8 @@ const modules = [Navigation]
         :to="link.url"
         target="_blank"
         v-for="link in widget.links[0].list"
-        class="flex items-center px-6 py-3 rounded-xl bg-orange-50 hover:bg-orange-100 transition text-orange-500 font-semibold mb-2"
+        :style="`color: ${widget.style.text_secondary}; background: ${widget.style.bg_primary};`"
+        class="flex items-center px-6 py-3 rounded-xl transition font-semibold mb-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-lg"
       >
         <div class="mr-4 text-xl" :class="mapIcon[link.icon]"></div>
         <p>{{ link.title }}</p>
@@ -60,11 +63,14 @@ const modules = [Navigation]
           >
             <SwiperSlide v-for="project in widget.projects">
               <div
-                class="ml-1 w-56 rounded-xl overflow-hidden border border-orange-300 shadow-transparent hover:shadow transition"
+                :style="`border-color: ${widget.style.bg_primary}; background: ${widget.style.bg_primary}`"
+                class="ml-1 w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
               >
                 <NuxtLink :to="project.url" target="_blank">
                   <img class="h-40 w-full object-cover" :src="project.image" alt="" />
-                  <p class="text-center py-2 font-semibold bg-orange-50 text-orange-500">{{ project.title }}</p>
+                  <p :style="`color: ${widget.style.text_secondary}; `" class="text-center py-2 font-semibold">
+                    {{ project.title }}
+                  </p>
                 </NuxtLink>
               </div>
             </SwiperSlide>
@@ -74,7 +80,10 @@ const modules = [Navigation]
             aria-label="slider-left"
             class="image-prev absolute flex rounded-full z-20 -left-2 top-1/2 -mt-6 bg-white"
           >
-            <div class="i-ion-md-arrow-dropleft-circle text-4xl text-orange-400 hover:text-orange-500 transition"></div>
+            <div
+              :style="`color: ${widget.style.text_primary}`"
+              class="i-ion-md-arrow-dropleft-circle text-4xl transition"
+            ></div>
           </button>
           <button
             slot="container-end"
@@ -82,7 +91,8 @@ const modules = [Navigation]
             class="image-next absolute flex rounded-full z-20 -right-2 top-1/2 -mt-6 bg-white"
           >
             <div
-              class="i-ion-md-arrow-dropright-circle text-4xl text-orange-400 hover:text-orange-500 transition"
+              :style="`color: ${widget.style.text_primary}`"
+              class="i-ion-md-arrow-dropright-circle text-4xl transition"
             ></div>
           </button>
         </div>

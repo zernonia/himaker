@@ -27,4 +27,10 @@ export const useWidgetStore = () =>
         url: "",
       },
     ],
+    style: {
+      dark_mode: false,
+      bg_primary: "#FFF7ED",
+      text_primary: "#F97317",
+      text_secondary: "#F97317",
+    },
   }))

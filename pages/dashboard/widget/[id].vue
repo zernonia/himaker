@@ -57,6 +57,10 @@ watch(childPath, (n) => {
         </div>
       </div>
       <Button label="Preview" class="!absolute top-4 right-6" @click="isOpen = !isOpen"></Button>
+
+      <Transition name="slide-fade">
+        <Styler v-if="isOpen" class="absolute top-36 right-6"></Styler>
+      </Transition>
     </div>
 
     <div class="flex mt-8">

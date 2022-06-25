@@ -20,4 +20,11 @@ export interface Widget {
     title: string
     url: string
   }[]
+
+  style: {
+    dark_mode: boolean
+    bg_primary: string
+    text_primary: string
+    text_secondary: string
+  }
 }
