@@ -23,7 +23,7 @@ const { data, pending, refresh } = await useLazyAsyncData(
 
 const addWidget = () => {
   const id = (Math.random() + 1).toString(36).substring(4)
-  navigateTo(`/dashboard/widget/${id}`)
+  navigateTo(`/dashboard/widget/${id}/`)
 }
 
 refresh()
@@ -33,8 +33,8 @@ refresh()
   <div>
     <Button class="!mb-4" label="Add widget" icon="pi pi-plus" iconPos="right" @click="addWidget"></Button>
 
-    <div v-if="pending && !data?.length">Loading..</div>
-    <div v-else v-for="info in data" class="mb-6">
+    <div v-if="pending && !widgetList?.length">Loading..</div>
+    <div v-else v-for="info in widgetList" class="mb-6">
       <NuxtLink :to="`/dashboard/widget/${info.id}/`">
         <div
           class="group w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-hidden border transition ring-2 ring-transparent hover:border-dark-500 hover:ring-dark-400"

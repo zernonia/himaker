@@ -26,7 +26,7 @@ onMounted(async () => {
   clear()
   const w = widgetList.value.find((i) => i.id === id)
   if (w) {
-    widget.value = w.payload
+    Object.assign(widget.value, w.payload)
   } else {
     const { data, error } = await client.from("widgets").select("*").eq("id", id).single()
     if (data) widget.value = data.payload
