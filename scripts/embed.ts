@@ -1,4 +1,5 @@
 window.onload = function () {
+  const url = window.location.hostname === "localhost" ? "http://localhost:3000" : "https://himaker.io"
   const payload = document.querySelector("[data-widget-id]")
   //@ts-ignore
   const { widgetId, placement } = payload.dataset
@@ -55,14 +56,14 @@ window.onload = function () {
   const containerButton = document.createElement("div")
   const containerButtonTrigger = document.createElement("button")
   containerButton.classList.add("himaker-trigger")
-  containerButton.append(constructIframe(`http://localhost:3000/widget/trigger?${searchParams}`))
+  containerButton.append(constructIframe(`${url}/widget/trigger?${searchParams}`))
   containerButton.append(containerButtonTrigger)
 
   const containerPanel = document.createElement("div")
   containerPanel.style.display = "none"
   containerPanel.style.transform = "translateY(50px)"
   containerPanel.classList.add("himaker-panel")
-  containerPanel.append(constructIframe(`http://localhost:3000/widget/panel?${searchParams}`))
+  containerPanel.append(constructIframe(`${url}/widget/panel?${searchParams}`))
 
   container.append(style)
   container.append(containerPanel)

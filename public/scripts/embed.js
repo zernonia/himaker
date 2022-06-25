@@ -1,4 +1,5 @@
 window.onload = function () {
+    var url = window.location.hostname === "localhost" ? "http://localhost:3000" : "https://himaker.io";
     var payload = document.querySelector("[data-widget-id]");
     //@ts-ignore
     var _a = payload.dataset, widgetId = _a.widgetId, placement = _a.placement;
@@ -21,13 +22,13 @@ window.onload = function () {
     var containerButton = document.createElement("div");
     var containerButtonTrigger = document.createElement("button");
     containerButton.classList.add("himaker-trigger");
-    containerButton.append(constructIframe("http://localhost:3000/widget/trigger?" + searchParams));
+    containerButton.append(constructIframe(url + "/widget/trigger?" + searchParams));
     containerButton.append(containerButtonTrigger);
     var containerPanel = document.createElement("div");
     containerPanel.style.display = "none";
     containerPanel.style.transform = "translateY(50px)";
     containerPanel.classList.add("himaker-panel");
-    containerPanel.append(constructIframe("http://localhost:3000/widget/panel?" + searchParams));
+    containerPanel.append(constructIframe(url + "/widget/panel?" + searchParams));
     container.append(style);
     container.append(containerPanel);
     container.append(containerButton);
