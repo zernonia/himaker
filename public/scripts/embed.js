@@ -2,7 +2,6 @@ window.onload = function () {
     var payload = document.querySelector("[data-widget-id]");
     //@ts-ignore
     var _a = payload.dataset, widgetId = _a.widgetId, placement = _a.placement;
-    console.log({ widgetId: widgetId, placement: placement });
     if (!widgetId)
         return;
     //@ts-ignore
@@ -64,36 +63,4 @@ window.onload = function () {
             containerPanel.style.display = "none";
         }, 150);
     };
-    // document.body.appendChild(iframe)
-    // const toggleBoopEl = (ev?: MouseEvent) => {
-    //   isOpen = !isOpen
-    //   if (isOpen) {
-    //     if (!ev) return
-    //     let boopEl = ev.target as HTMLElement
-    //     let { offsetLeft, offsetTop, offsetHeight, offsetWidth } = boopEl
-    //     iframe.style.transform = `translate(${offsetLeft - offsetWidth}px, ${offsetTop + offsetHeight}px)`
-    //     iframe.style.display = "block"
-    //     setTimeout(() => {
-    //       iframe.style.opacity = "1"
-    //     }, 0)
-    //   } else {
-    //     iframe.style.opacity = "0"
-    //     setTimeout(() => {
-    //       iframe.style.display = "none"
-    //     }, 150)
-    //   }
-    // }
-    // const checkClickOutside = (event: MouseEvent) => {
-    //   let el = event.target as Element
-    //   if (containerButton == el) {
-    //     if (isOpen) {
-    //       // toggleBoopEl()
-    //     }
-    //   }
-    // }
-    // if (containerButton.length) {
-    //   document.addEventListener("click", checkClickOutside)
-    //   //@ts-ignore
-    //   Array.from(containerButton).forEach((el) => el.addEventListener("click", toggleBoopEl))
-    // }
 };
