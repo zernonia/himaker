@@ -4,13 +4,18 @@ import type { MenuItem } from "primevue/menuitem"
 const props = defineProps({
   horizontal: Boolean,
 })
-const emits = defineEmits(["delete"])
+const emits = defineEmits(["delete", "copy"])
 const menu = ref()
 const items = ref<MenuItem[]>([
   {
     label: "Delete",
     icon: "pi pi-fw pi-trash",
     command: (ev) => emits("delete", ev),
+  },
+  {
+    label: "Duplicate",
+    icon: "pi pi-fw pi-copy",
+    command: (ev) => emits("copy", ev),
   },
 ])
 </script>

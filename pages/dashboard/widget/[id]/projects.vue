@@ -29,6 +29,9 @@ const addProject = () => {
 const deleteProject = (index: number) => {
   projects.value.splice(index, 1)
 }
+const copyProject = (index: number) => {
+  projects.value.splice(index + 1, 0, projects.value[index])
+}
 const clickUpload = (ev: Event) => {
   const div = ev.target as HTMLDivElement
   const input = (div.querySelector("input") as HTMLInputElement) || (div.nextSibling as HTMLInputElement)
@@ -49,7 +52,7 @@ const setImage = (ev: string, index: number) => {
         <Draggable v-for="(item, i) in projects" :key="i">
           <div class="m-2">
             <div class="flex flex-col items-center">
-              <Handle horizontal @delete="deleteProject(i)"></Handle>
+              <Handle horizontal @delete="deleteProject(i)" @copy="copyProject(i)"></Handle>
 
               <div class="w-full flex flex-col items-center space-y-4">
                 <div

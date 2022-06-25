@@ -37,8 +37,6 @@ watch(childPath, (n) => {
   const headerOffset = selector === "#projects" ? 100 : 130
   const top = section?.getBoundingClientRect().top
   const offsetPosition = top + previewEl.value.scrollTop - headerOffset
-  console.log({ top, offsetPosition })
-
   previewEl.value.scrollTo({
     top: offsetPosition,
     behavior: "smooth",

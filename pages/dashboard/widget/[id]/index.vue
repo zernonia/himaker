@@ -15,6 +15,9 @@ const addImage = () => {
 const deleteImage = (index: number) => {
   images.value.splice(index, 1)
 }
+const copyImage = (index: number) => {
+  images.value.splice(index + 1, 0, images.value[index])
+}
 const clickUpload = (ev: Event) => {
   const div = ev.target as HTMLDivElement
   const input = (div.querySelector("input") as HTMLInputElement) || (div.nextSibling as HTMLInputElement)
@@ -52,7 +55,7 @@ const setImage = (ev: string, index: number) => {
       >
         <Draggable v-for="(item, i) in images" :key="i">
           <div class="my-4 mx-2 flex flex-col items-center">
-            <Handle horizontal @delete="deleteImage(i)"></Handle>
+            <Handle horizontal @delete="deleteImage(i)" @copy="copyImage(i)"></Handle>
             <div
               @click="clickUpload"
               class="w-36 h-36 my-2 overflow-hidden rounded-full bg-white border border-teal-400 cursor-pointer"

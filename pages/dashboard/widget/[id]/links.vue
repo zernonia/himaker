@@ -15,6 +15,9 @@ const addLink = () => {
 const deleteLink = (index: number) => {
   list.value.splice(index, 1)
 }
+const copyLink = (index: number) => {
+  list.value.splice(index + 1, 0, list.value[index])
+}
 
 const iconOptions = ref([
   { name: "Link", value: "link" },
@@ -38,7 +41,7 @@ const iconOptions = ref([
       <Draggable v-for="(item, i) in list" :key="i">
         <div class="my-2">
           <div class="flex items-center">
-            <Handle @delete="deleteLink(i)"></Handle>
+            <Handle @delete="deleteLink(i)" @copy="copyLink(i)"></Handle>
 
             <div class="w-full flex items-center space-x-2">
               <Dropdown class="w-186px" :options="iconOptions" optionValue="value" v-model="list[i].icon">
