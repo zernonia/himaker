@@ -22,7 +22,7 @@ const modules = [Navigation]
           v-for="(image, i) in images"
           :src="image"
           class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10"
-          :class="[i > 0 ? `-ml-${2 + images.length * 3}` : '']"
+          :class="[i > 0 ? `-ml-${1 + images.length * 3}` : '']"
           :style="`z-index: ${10 - i}`"
         />
         <div v-else class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10" />

@@ -20,7 +20,9 @@ const save = async () => {
 }
 
 const tick = ref("0")
+const { clear } = useWidgetClear()
 onMounted(async () => {
+  clear()
   const { data } = await client.from("widgets").select("*").eq("id", id).single()
   if (data) widget.value = data.payload
   tick.value = "1"
@@ -29,12 +31,9 @@ onMounted(async () => {
 const isOpen = ref(false)
 const childPath = computed(() => path.value.split(`${id}`)[1])
 const previewEl = ref<HTMLDivElement>()
-const { clear } = useWidgetClear()
+
 watch(childPath, (n, o) => {
-  if (!n) {
-    clear()
-    return
-  }
+  if (!n) return
   let selector = n.replace("/", "")
   selector = selector == "" ? "#heading" : "#" + selector
 

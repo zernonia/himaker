@@ -5,7 +5,5 @@ function range(size, startAt = 1) {
 }
 
 export default defineConfig({
-  safelist: [
-    range(20).map((i) => `-ml-${i}`), // mt-1 to mt-10
-  ],
+  safelist: [range(10).map((i) => `-ml-${1 + i * 3}`)],
 })
