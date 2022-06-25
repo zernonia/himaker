@@ -1,6 +1,10 @@
 html {
   font-size: 14px;
 }
+label,
+h3 {
+  @apply font-medium text-dark-500;
+}
 input[type="color"] {
   -webkit-appearance: none;
   @apply cursor-pointer border-1 focus:outline-transparent w-12 h-12 rounded-full overflow-hidden;

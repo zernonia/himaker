@@ -1819,15 +1819,15 @@
 .p-buttonset.p-button-secondary > .p-button,
 .p-splitbutton.p-button-secondary > .p-button {
   color: #ffffff;
-  background: #64748b;
-  border: 1px solid #64748b;
+  background: #202020;
+  border: 1px solid #202020;
 }
 .p-button.p-button-secondary:enabled:hover,
 .p-buttonset.p-button-secondary > .p-button:enabled:hover,
 .p-splitbutton.p-button-secondary > .p-button:enabled:hover {
-  background: #475569;
+  background: #000000;
   color: #ffffff;
-  border-color: #475569;
+  border-color: #000000;
 }
 .p-button.p-button-secondary:enabled:focus,
 .p-buttonset.p-button-secondary > .p-button:enabled:focus,
@@ -1845,28 +1845,28 @@
 .p-buttonset.p-button-secondary > .p-button.p-button-outlined,
 .p-splitbutton.p-button-secondary > .p-button.p-button-outlined {
   background-color: transparent;
-  color: #64748b;
+  color: #202020;
   border: 1px solid;
 }
 .p-button.p-button-secondary.p-button-outlined:enabled:hover,
 .p-buttonset.p-button-secondary > .p-button.p-button-outlined:enabled:hover,
 .p-splitbutton.p-button-secondary > .p-button.p-button-outlined:enabled:hover {
   background: rgba(100, 116, 139, 0.04);
-  color: #64748b;
+  color: #202020;
   border: 1px solid;
 }
 .p-button.p-button-secondary.p-button-outlined:enabled:active,
 .p-buttonset.p-button-secondary > .p-button.p-button-outlined:enabled:active,
 .p-splitbutton.p-button-secondary > .p-button.p-button-outlined:enabled:active {
   background: rgba(100, 116, 139, 0.16);
-  color: #64748b;
+  color: #202020;
   border: 1px solid;
 }
 .p-button.p-button-secondary.p-button-text,
 .p-buttonset.p-button-secondary > .p-button.p-button-text,
 .p-splitbutton.p-button-secondary > .p-button.p-button-text {
   background-color: transparent;
-  color: #64748b;
+  color: #202020;
   border-color: transparent;
 }
 .p-button.p-button-secondary.p-button-text:enabled:hover,
@@ -1874,14 +1874,14 @@
 .p-splitbutton.p-button-secondary > .p-button.p-button-text:enabled:hover {
   background: rgba(100, 116, 139, 0.04);
   border-color: transparent;
-  color: #64748b;
+  color: #202020;
 }
 .p-button.p-button-secondary.p-button-text:enabled:active,
 .p-buttonset.p-button-secondary > .p-button.p-button-text:enabled:active,
 .p-splitbutton.p-button-secondary > .p-button.p-button-text:enabled:active {
   background: rgba(100, 116, 139, 0.16);
   border-color: transparent;
-  color: #64748b;
+  color: #202020;
 }
 
 .p-button.p-button-info,
@@ -2406,35 +2406,35 @@
 
 .p-splitbutton.p-button-secondary.p-button-outlined > .p-button {
   background-color: transparent;
-  color: #64748b;
+  color: #202020;
   border: 1px solid;
 }
 .p-splitbutton.p-button-secondary.p-button-outlined > .p-button:enabled:hover,
 .p-splitbutton.p-button-secondary.p-button-outlined > .p-button:not(button):not(a):not(.p-disabled):hover {
   background: rgba(100, 116, 139, 0.04);
-  color: #64748b;
+  color: #202020;
 }
 .p-splitbutton.p-button-secondary.p-button-outlined > .p-button:enabled:active,
 .p-splitbutton.p-button-secondary.p-button-outlined > .p-button:not(button):not(a):not(.p-disabled):active {
   background: rgba(100, 116, 139, 0.16);
-  color: #64748b;
+  color: #202020;
 }
 .p-splitbutton.p-button-secondary.p-button-text > .p-button {
   background-color: transparent;
-  color: #64748b;
+  color: #202020;
   border-color: transparent;
 }
 .p-splitbutton.p-button-secondary.p-button-text > .p-button:enabled:hover,
 .p-splitbutton.p-button-secondary.p-button-text > .p-button:not(button):not(a):not(.p-disabled):hover {
   background: rgba(100, 116, 139, 0.04);
   border-color: transparent;
-  color: #64748b;
+  color: #202020;
 }
 .p-splitbutton.p-button-secondary.p-button-text > .p-button:enabled:active,
 .p-splitbutton.p-button-secondary.p-button-text > .p-button:not(button):not(a):not(.p-disabled):active {
   background: rgba(100, 116, 139, 0.16);
   border-color: transparent;
-  color: #64748b;
+  color: #202020;
 }
 
 .p-splitbutton.p-button-info.p-button-outlined > .p-button {
@@ -5682,7 +5682,7 @@
   line-height: 1.5rem;
 }
 .p-badge.p-badge-secondary {
-  background-color: #64748b;
+  background-color: #202020;
   color: #ffffff;
 }
 .p-badge.p-badge-success {

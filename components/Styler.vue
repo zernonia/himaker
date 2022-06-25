@@ -3,7 +3,7 @@ const widget = useWidgetStore()
 </script>
 
 <template>
-  <div class="p-4 rounded-xl shadow bg-white flex flex-col space-y-2">
+  <div class="p-4 rounded-xl border shadow bg-white flex flex-col space-y-2">
     <input
       v-tippy="{ content: 'Primary background', placement: 'left' }"
       type="color"

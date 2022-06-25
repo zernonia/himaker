@@ -50,6 +50,8 @@ watch(childPath, (n, o) => {
     behavior: "smooth",
   })
 })
+
+const gopro = () => {}
 </script>
 
 <template>
@@ -64,7 +66,7 @@ watch(childPath, (n, o) => {
     <div class="relative">
       <div
         ref="previewEl"
-        class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border transition-all ease-in-out duration-700"
+        class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border border-dark-500 ring ring-dark-500 transition-all ease-in-out duration-700"
         :class="{ 'h-screen-md': isOpen }"
       >
         <div class="absolute top-4 left-4 text-2xl font-semibold opacity-20">
@@ -82,7 +84,7 @@ watch(childPath, (n, o) => {
     </div>
 
     <div class="flex mt-8">
-      <div class="flex flex-col items-start space-y-2 flex-shrink-0 w-1/5">
+      <div class="flex flex-col items-start space-y-2 flex-shrink-0 w-1/5 pr-4">
         <Button
           @click="save"
           icon="pi pi-save"
@@ -125,9 +127,11 @@ watch(childPath, (n, o) => {
           <div class="i-ion-medical-outline text-xl mr-2"></div>
           Etc
         </button>
+
+        <Button @click="gopro" class="w-full p-button-secondary" label="Go Pro ✨" iconPos="right"></Button>
       </div>
 
-      <div class="w-4/5 ml-4">
+      <div class="w-4/5">
         <ClientOnly>
           <NuxtPage class="border" :key="tick"></NuxtPage>
         </ClientOnly>
