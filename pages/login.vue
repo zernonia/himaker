@@ -12,6 +12,8 @@ const login = (provider: Provider) => {
     { redirectTo: window.location.origin + "/dashboard" }
   )
 }
+
+useCustomHead("Login")
 </script>
 
 <template>
