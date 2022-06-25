@@ -63,7 +63,7 @@ const gopro = () => {}
 <template>
   <div>
     <NuxtLink
-      to="/dashboard"
+      :to="isSaving ? undefined : '/dashboard'"
       class="flex items-center mb-4 px-6 py-3 w-max text-left font-semibold rounded-lg bg-transparent hover:bg-gray-100 transition"
     >
       <div class="i-ion-md-arrow-dropleft text-2xl mr-2"></div>

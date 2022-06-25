@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import type { MenuItem } from "primevue/menuitem"
-
-const {
-  params: { id },
-} = useRoute()
-
+const user = useUserStore()
 const widget = useWidgetStore()
 const { images } = toRefs(widget.value.heading)
 const { onDrop, applyDrag } = useDnd(images)
 
+const isMax3Image = computed(() => !user.value.payment_method && images.value.length >= 3)
 const addImage = () => {
+  if (isMax3Image) return
   images.value.push("")
 }
 const deleteImage = (index: number) => {
   images.value.splice(index, 1)
 }
 const copyImage = (index: number) => {
+  if (isMax3Image) return
   images.value.splice(index + 1, 0, images.value[index])
 }
 const clickUpload = (ev: Event) => {
@@ -60,7 +58,14 @@ const setImage = (ev: string, index: number) => {
               @click="clickUpload"
               class="w-36 h-36 my-2 overflow-hidden rounded-full bg-white border border-teal-400 cursor-pointer"
             >
-              <img v-if="item" class="w-full h-full object-cover" :src="item" :alt="item" />
+              <div
+                v-if="!item"
+                class="pointer-events-none w-full h-full flex flex-col items-center justify-center text-primary hover:text-primary-hover transition"
+              >
+                <div class="i-ion-upload text-5xl"></div>
+                <p class="text-sm">Click to upload</p>
+              </div>
+              <img v-else class="w-full h-full object-cover" :src="item" :alt="item" />
               <Upload @done="setImage($event, i)"></Upload>
             </div>
             <InputText placeholder="https://<image>.com" v-model="images[i]"></InputText>
@@ -68,6 +73,17 @@ const setImage = (ev: string, index: number) => {
         </Draggable>
       </Container>
     </div>
-    <Button @click="addImage" icon="pi pi-plus" class="p-button-rounded p-button-sm !mt-2 !w-10 !h-10"></Button>
+    <div class="flex space-x-4">
+      <Button
+        :disabled="isMax3Image"
+        @click="addImage"
+        icon="pi pi-plus"
+        class="p-button-rounded p-button-sm !mt-2 !w-10 !h-10"
+      ></Button>
+      <div v-if="isMax3Image" class="text-red-500">
+        <p class="inline-flex items-center">Max images added, upgrade to <TagSuper class="ml-2"></TagSuper></p>
+        <p>to have unlimited image.</p>
+      </div>
+    </div>
   </div>
 </template>

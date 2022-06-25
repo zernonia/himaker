@@ -4,7 +4,7 @@ import { WidgetInfo } from "interface"
 const client = useSupabaseClient()
 const widgetList = useWidgetListStore()
 
-const { data, pending, refresh } = await useLazyAsyncData(
+const { pending, refresh } = await useLazyAsyncData(
   "widget-list",
   async () => {
     const { data, error } = await client
