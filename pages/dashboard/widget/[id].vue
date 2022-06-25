@@ -33,7 +33,7 @@ const childPath = computed(() => path.value.split(`${id}`)[1])
 const previewEl = ref<HTMLDivElement>()
 
 watch(childPath, (n, o) => {
-  if (!n) return
+  if (!n || isOpen.value) return
   let selector = n.replace("/", "")
   selector = selector == "" ? "#heading" : "#" + selector
 
@@ -63,6 +63,7 @@ watch(childPath, (n, o) => {
         class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border transition-all ease-in-out duration-700"
         :class="{ 'h-screen-md': isOpen }"
       >
+        <div class="absolute top-4 left-4 text-2xl font-semibold opacity-20">{{ widget.heading.title }}</div>
         <div class="absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
           <Widget :widget="widget"></Widget>
         </div>
@@ -76,36 +77,41 @@ watch(childPath, (n, o) => {
 
     <div class="flex mt-8">
       <div class="flex flex-col items-start space-y-2 flex-shrink-0 w-1/5">
+        <Button @click="save" icon="pi pi-save" :loading="isSaving" label="Save" iconPos="right"></Button>
+
+        <h5 class="font-bold text-gray-400 !mt-8">Setup</h5>
         <button
-          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
-          :class="{ 'font-semibold text-teal-500': childPath === '/' }"
+          class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/' }"
           @click="goTo('')"
         >
+          <div class="i-ion-md-person text-2xl mr-2"></div>
           Heading
         </button>
         <button
-          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
-          :class="{ 'font-semibold text-teal-500': childPath === '/links' }"
+          class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/links' }"
           @click="goTo('links')"
         >
+          <div class="i-ion-link text-2xl mr-2"></div>
           Links
         </button>
         <button
-          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
-          :class="{ 'font-semibold text-teal-500': childPath === '/projects' }"
+          class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/projects' }"
           @click="goTo('projects')"
         >
+          <div class="i-ion-rocket-outline text-2xl mr-2"></div>
           Projects
         </button>
         <button
-          class="px-2 py-2 w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
-          :class="{ 'font-semibold text-teal-500': childPath === '/etc' }"
+          class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
+          :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/etc' }"
           @click="goTo('etc')"
         >
+          <div class="i-ion-medical-outline text-2xl mr-2"></div>
           Etc
         </button>
-
-        <Button @click="save" icon="pi pi-save" :loading="isSaving" label="Save" iconPos="right"></Button>
       </div>
 
       <div class="w-4/5 ml-4">

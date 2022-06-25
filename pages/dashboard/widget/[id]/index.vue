@@ -32,7 +32,7 @@ const setImage = (ev: string, index: number) => {
 <template>
   <div class="p-6 w-full bg-gray-50 rounded-xl flex flex-col form">
     <label for="title">Title</label>
-    <InputText v-model="widget.heading.title" id="title" name="title" placeholder="by Me"></InputText>
+    <InputText v-model="widget.heading.title" id="title" name="title" placeholder="Title of this widget"></InputText>
 
     <label for="headline">Headline</label>
     <InputText
