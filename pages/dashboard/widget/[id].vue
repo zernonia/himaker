@@ -23,8 +23,12 @@ const tick = ref("0")
 const { clear } = useWidgetClear()
 onMounted(async () => {
   clear()
-  const { data } = await client.from("widgets").select("*").eq("id", id).single()
+  const { data, error } = await client.from("widgets").select("*").eq("id", id).single()
   if (data) widget.value = data.payload
+  if (error) {
+    widget.value.heading.name = user.value.user_metadata.full_name
+    widget.value.heading.images[0] = user.value.user_metadata.avatar_url
+  }
   tick.value = "1"
 })
 
@@ -63,7 +67,9 @@ watch(childPath, (n, o) => {
         class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border transition-all ease-in-out duration-700"
         :class="{ 'h-screen-md': isOpen }"
       >
-        <div class="absolute top-4 left-4 text-2xl font-semibold opacity-20">{{ widget.heading.title }}</div>
+        <div class="absolute top-4 left-4 text-2xl font-semibold opacity-20">
+          {{ widget.heading.title !== "" ? widget.heading.title : "Title of this widget" }}
+        </div>
         <div class="absolute top-20 pb-20 left-1/2 transform -translate-x-1/2">
           <Widget :widget="widget"></Widget>
         </div>

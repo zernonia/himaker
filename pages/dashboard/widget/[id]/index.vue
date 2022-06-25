@@ -43,7 +43,7 @@ const setImage = (ev: string, index: number) => {
     ></InputText>
 
     <label for="maker_name">Name</label>
-    <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="Supabase ⚡️"></InputText>
+    <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="hiMaker 👋🏻"></InputText>
 
     <h3>Images</h3>
     <div class="flex items-center w-full overflow-x-auto">

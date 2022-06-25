@@ -28,3 +28,9 @@ export interface Widget {
     text_secondary: string
   }
 }
+
+export interface WidgetInfo {
+  id: string
+  created_at: Date
+  payload: Widget
+}

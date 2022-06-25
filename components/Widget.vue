@@ -24,6 +24,7 @@ const modules = [Navigation]
           class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10"
           :class="[i > 0 ? `-ml-${1 + images.length * 3}` : '']"
           :style="`z-index: ${10 - i}`"
+          loading="lazy"
         />
         <div v-else class="w-26 h-26 bg-white flex-shrink-0 border-3 rounded-full !hover:z-10" />
       </div>
@@ -31,7 +32,7 @@ const modules = [Navigation]
         {{ widget.heading.headline !== "" ? widget.heading.headline : "This project is made by" }}
       </h3>
       <h2 :style="`color: ${widget.style.text_primary}`" class="font-semibold text-2xl transition">
-        {{ widget.heading.name !== "" ? widget.heading.name : "hiMaker" }}
+        {{ widget.heading.name !== "" ? widget.heading.name : "hiMaker 👋🏻" }}
       </h2>
     </section>
 
@@ -70,7 +71,7 @@ const modules = [Navigation]
                 class="ml-1 w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
               >
                 <NuxtLink :to="project.url" target="_blank">
-                  <img class="h-40 w-full object-cover" :src="project.image" alt="" />
+                  <img class="h-40 w-full object-cover" :src="project.image" alt="" loading="lazy" />
                   <p :style="`color: ${widget.style.text_secondary}; `" class="text-center py-2 font-semibold">
                     {{ project.title }}
                   </p>
