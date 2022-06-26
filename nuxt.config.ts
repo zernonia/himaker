@@ -32,4 +32,10 @@ export default defineNuxtConfig({
   build: {
     transpile: ["primevue"],
   },
+  runtimeConfig: {
+    public: {
+      STRIPE_PUBLISHABLE_KEY_LIVE: process.env.STRIPE_PUBLISHABLE_KEY_LIVE,
+      STRIPE_PUBLISHABLE_KEY: process.env.STRIPE_PUBLISHABLE_KEY,
+    },
+  },
 })

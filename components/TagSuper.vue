@@ -1,6 +1,18 @@
 <script setup lang="ts">
-const goSuper = () => {
+import { getStripe } from "~~/utils/stripe-client"
+
+const goSuper = async () => {
   console.log("SUPER!!!")
+  try {
+    const { sessionId } = await $fetch("/api/create-checkout-session", {
+      method: "POST",
+      body: { price: "price_1LEt2EJvLKxh6TtRISqDgCvj" },
+    })
+    const stripe = await getStripe()
+    stripe?.redirectToCheckout({ sessionId })
+  } catch (err) {
+    console.log(err)
+  }
 }
 </script>
 

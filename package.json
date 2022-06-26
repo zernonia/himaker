@@ -19,6 +19,7 @@
     "typescript": "3.9.10"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.32.0",
     "@vueuse/core": "^8.7.5",
     "metadata-scraper": "^0.2.56",
     "primeicons": "^5.0.0",
