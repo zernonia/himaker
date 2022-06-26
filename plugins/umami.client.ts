@@ -12,6 +12,8 @@ export default defineNuxtPlugin(() => {
 })
 
 function loadScript(options: any) {
+  if (window.location.pathname.includes("widget")) return
+
   const head = document.head || document.getElementsByTagName("head")[0]
   const script = document.createElement("script")
 
