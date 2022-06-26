@@ -1,9 +1,6 @@
 <script setup lang="ts">
-const settings = ref({
-  remove_branding: false,
-  collect_feedback: false,
-  analytics: false,
-})
+const widget = useWidgetStore()
+const { settings } = toRefs(widget.value)
 </script>
 
 <template>

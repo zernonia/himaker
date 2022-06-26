@@ -27,6 +27,12 @@ export interface Widget {
     text_primary: string
     text_secondary: string
   }
+
+  settings: {
+    remove_branding: boolean
+    collect_feedback: boolean
+    analytics: boolean
+  }
 }
 
 export interface WidgetInfo {

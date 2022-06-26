@@ -32,6 +32,11 @@ const initialState: Widget = {
     text_primary: "#00ddb3",
     text_secondary: "#ffffff",
   },
+  settings: {
+    remove_branding: false,
+    collect_feedback: false,
+    analytics: false,
+  },
 }
 
 export const useWidgetStore = () => useState<Widget>("widget", () => initialState)

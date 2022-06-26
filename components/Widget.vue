@@ -16,7 +16,7 @@ const modules = [Navigation]
 </script>
 
 <template>
-  <div class="w-full xs:w-84 rounded-2xl shadow-2xl p-6 bg-white border">
+  <div class="w-full xs:w-84 rounded-2xl shadow-2xl p-6 pb-10 bg-white border">
     <section id="heading" class="flex flex-col items-center">
       <div class="flex py-4">
         <img
@@ -105,7 +105,7 @@ const modules = [Navigation]
       </div>
     </section>
 
-    <section id="footer" class="mt-8 mb-4">
+    <section v-if="!widget.settings.remove_branding" id="footer" class="mt-8 mb-4">
       <div class="w-full text-sm flex items-center justify-center group">
         <img
           class="w-6 h-6 transform -rotate-5 group-hover:-rotate-15 transition mr-4"
