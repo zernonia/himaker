@@ -12,6 +12,9 @@ export default defineConfig({
         primary: "#00ddb3",
         "primary-hover": "#00c29d",
       },
+      screens: {
+        xs: "425px",
+      },
     },
   },
 })

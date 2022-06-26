@@ -16,7 +16,7 @@ const modules = [Navigation]
 </script>
 
 <template>
-  <div class="w-84 rounded-2xl shadow-2xl p-6 bg-white border">
+  <div class="w-full xs:w-84 rounded-2xl shadow-2xl p-6 bg-white border">
     <section id="heading" class="flex flex-col items-center">
       <div class="flex py-4">
         <img
@@ -70,7 +70,7 @@ const modules = [Navigation]
             <SwiperSlide v-for="project in projects">
               <div
                 :style="`border-color: ${widget.style.bg_primary}; background: ${widget.style.bg_primary}`"
-                class="ml-1 w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
+                class="ml-1 xs:w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
               >
                 <NuxtLink :to="project.url" target="_blank">
                   <img class="h-40 w-full object-cover" :src="project.image" alt="" loading="lazy" />
