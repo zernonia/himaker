@@ -40,8 +40,8 @@ window.onload = function () {
 }
 .himaker-panel > div > button {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 1rem;
+  right: 1rem;
   opacity: 50%;
   transition: opacity 0.15s ease-in-out;
 }
