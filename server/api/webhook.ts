@@ -1,5 +1,5 @@
-import { stripe } from "utils/stripe"
-import { upsertProductRecord, upsertPriceRecord, manageSubscriptionStatusChange } from "utils/supabase-admin"
+import { stripe } from "~~/utils/stripe"
+import { upsertProductRecord, upsertPriceRecord, manageSubscriptionStatusChange } from "~~/utils/supabase-admin"
 import Stripe from "stripe"
 import { Readable } from "node:stream"
 
