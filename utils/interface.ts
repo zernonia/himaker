@@ -43,7 +43,7 @@ export interface WidgetInfo {
   users?: Users
 }
 
-export interface Products {
+export interface Product {
   id: string /* primary key */
   active?: boolean
   name?: string
@@ -60,12 +60,12 @@ export interface Users {
   payment_method?: any // type unknown;
 }
 
-export interface Customers {
+export interface Customer {
   id: string /* primary key */
   stripe_customer_id?: string
 }
 
-export interface Prices {
+export interface Price {
   id: string /* primary key */
   product_id?: string /* foreign key to products.id */
   active?: boolean
@@ -77,15 +77,15 @@ export interface Prices {
   interval_count?: any // type unknown;
   trial_period_days?: any // type unknown;
   metadata?: any // type unknown;
-  products?: Products
+  products?: Product
 }
 
-export interface Subscriptions {
+export interface Subscription {
   id: string /* primary key */
   user_id: string
   status?: any // type unknown;
   metadata?: any // type unknown;
-  price_id?: string /* foreign key to prices.id */
+  price_id?: string /* foreign key to price.id */
   quantity?: any // type unknown;
   cancel_at_period_end?: boolean
   created: string
@@ -96,7 +96,7 @@ export interface Subscriptions {
   canceled_at?: string
   trial_start?: string
   trial_end?: string
-  prices?: Prices
+  price?: Price
 }
 
 export interface Widgets {

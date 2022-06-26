@@ -24,6 +24,7 @@
     "primeicons": "^5.0.0",
     "primevue": "^3.15.0",
     "smooth-scrollbar": "^8.7.4",
+    "stripe": "^9.10.0",
     "swiper": "^8.2.4",
     "vue-tippy": "^6.0.0-alpha.58",
     "vue3-smooth-dnd": "^0.0.2"
