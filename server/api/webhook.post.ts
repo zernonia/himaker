@@ -31,7 +31,7 @@ const relevantEvents = new Set([
 ])
 
 export default defineEventHandler(async (event) => {
-  const { req, res } = event
+  const { req } = event
   const buf = await buffer(req)
   const sig = req.headers["stripe-signature"]
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET_LIVE ?? process.env.STRIPE_WEBHOOK_SECRET
@@ -42,9 +42,9 @@ export default defineEventHandler(async (event) => {
     ev = stripe.webhooks.constructEvent(buf, sig, webhookSecret)
   } catch (err: any) {
     console.log(`❌ Error message: ${err.message}`)
-    res.statusCode = 400
-    return `Webhook Error: ${err.message}`
+    sendError(event, new Error(`Webhook Error: ${err.message}`))
   }
+  console.log(`[Triggering]: ${ev.type}`)
 
   if (relevantEvents.has(ev.type)) {
     try {

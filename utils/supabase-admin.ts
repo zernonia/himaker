@@ -75,10 +75,11 @@ const createOrRetrieveCustomer = async ({ email, uuid }: { email: string; uuid: 
 const copyBillingDetailsToCustomer = async (uuid: string, payment_method: Stripe.PaymentMethod) => {
   //Todo: check this assertion
   const customer = payment_method.customer as string
-  const { name, phone, address } = payment_method.billing_details
-  if (!name || !phone || !address) return
+  const { name, address } = payment_method.billing_details
+
+  if (!name || !address) return
   //@ts-ignore
-  await stripe.customers.update(customer, { name, phone, address })
+  await stripe.customers.update(customer, { name, address })
   const { error } = await supabaseAdmin
     .from<Users>("users")
     .update({
@@ -87,6 +88,7 @@ const copyBillingDetailsToCustomer = async (uuid: string, payment_method: Stripe
     })
     .eq("id", uuid)
   if (error) throw error
+  console.log(`Updated billing address & payment method from subscription customer [${customer}] to user [${uuid}]`)
 }
 
 const manageSubscriptionStatusChange = async (subscriptionId: string, customerId: string, createAction = false) => {
