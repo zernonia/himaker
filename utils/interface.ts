@@ -58,6 +58,7 @@ export interface Users {
   avatar_url?: string
   billing_address?: any // type unknown;
   payment_method?: any // type unknown;
+  subscription?: Subscription
 }
 
 export interface Customer {

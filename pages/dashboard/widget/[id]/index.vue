@@ -1,19 +1,19 @@
 <script setup lang="ts">
-const user = useUserStore()
+const { isSuperUser } = useUserStore()
 const widget = useWidgetStore()
 const { images } = toRefs(widget.value.heading)
 const { onDrop, applyDrag } = useDnd(images)
 
-const isMax3Image = computed(() => !user.value.payment_method && images.value.length >= 3)
+const isMax3Image = computed(() => !isSuperUser && images.value.length >= 3)
 const addImage = () => {
-  if (isMax3Image) return
+  if (isMax3Image.value) return
   images.value.push("")
 }
 const deleteImage = (index: number) => {
   images.value.splice(index, 1)
 }
 const copyImage = (index: number) => {
-  if (isMax3Image) return
+  if (isMax3Image.value) return
   images.value.splice(index + 1, 0, images.value[index])
 }
 const clickUpload = (ev: Event) => {

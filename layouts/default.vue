@@ -1,16 +1,24 @@
 <script setup lang="ts">
-import { Users } from "interface"
+import { Users, Subscription } from "interface"
 
 const client = useSupabaseClient()
 const user = useSupabaseUser()
-const userStore = useUserStore()
+const { user: userStore } = useUserStore()
 
 await useLazyAsyncData(
   "user-id",
   async () => {
-    const { data } = await client.from<Users>("users").select("*").eq("id", user.value.id).single()
-    userStore.value = data
-    return data
+    const { data: userData } = await client.from<Users>("users").select("*").eq("id", user.value.id).single()
+    const { data: subscriptionData } = await client
+      .from<Subscription>("subscriptions")
+      .select("*")
+      .eq("user_id", user.value.id)
+      .single()
+    userStore.value = {
+      ...userData,
+      subscription: subscriptionData,
+    }
+    return userData
   },
   { server: false }
 )

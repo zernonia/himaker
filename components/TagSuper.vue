@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getStripe } from "~~/utils/stripe-client"
 
+const { isSuperUser, user } = useUserStore()
 const goSuper = async () => {
   console.log("SUPER!!!")
   try {
@@ -18,6 +19,7 @@ const goSuper = async () => {
 
 <template>
   <button
+    v-if="!isSuperUser && user?.subscription"
     class="px-3 py-1.5 rounded-lg bg-dark-500 text-white text-[10px] flex items-center space-x-2 font-semibold"
     @click="goSuper"
   >
