@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import type { Widget, WidgetInfo } from "interface"
+import Scrollbar from "smooth-scrollbar"
+
+const w = ref<HTMLElement>()
+onMounted(() => {
+  if (!w) return
+  Scrollbar.init(w.value)
+})
 
 const {
   query: { widgetId },
@@ -17,7 +24,7 @@ definePageMeta({
 </script>
 
 <template>
-  <ScrollPanel style="width: 100%; height: 600px" class="custom">
-    <Widget v-if="data" :widget="data"></Widget>
-  </ScrollPanel>
+  <div ref="w" class="xs:h-600px">
+    <Widget class="border-transparent" v-if="data" :widget="data"></Widget>
+  </div>
 </template>

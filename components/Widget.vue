@@ -13,6 +13,9 @@ const props = defineProps({
 const images = computed(() => props.widget.heading.images.filter((i) => i))
 const projects = computed(() => props.widget.projects.filter((i) => i.image))
 const modules = [Navigation]
+
+const mounted = ref("0")
+onMounted(() => (mounted.value = "1"))
 </script>
 
 <template>
@@ -66,6 +69,7 @@ const modules = [Navigation]
             :spaceBetween="20"
             class="w-full"
             :modules="modules"
+            :key="mounted"
           >
             <SwiperSlide v-for="project in projects">
               <div
