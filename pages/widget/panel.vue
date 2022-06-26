@@ -17,7 +17,7 @@ definePageMeta({
 </script>
 
 <template>
-  <ScrollPanel style="width: 100%; height: 100%" class="custom">
+  <ScrollPanel style="width: 100%; height: 600px" class="custom">
     <Widget v-if="data" :widget="data"></Widget>
   </ScrollPanel>
 </template>
