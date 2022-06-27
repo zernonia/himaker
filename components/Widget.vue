@@ -68,14 +68,14 @@ onMounted(() => (mounted.value = "1"))
             :navigation="{ nextEl: '.image-next', prevEl: '.image-prev' }"
             :slidesPerView="1.3"
             :spaceBetween="20"
-            class="w-full"
+            class="w-full !py-2"
             :modules="modules"
             :key="mounted"
           >
             <SwiperSlide v-for="project in projects">
               <div
                 :style="`border-color: ${widget.style.bg_primary}; background: ${widget.style.bg_primary}`"
-                class="ml-1 xs:w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-xl transition"
+                class="ml-1 xs:w-56 rounded-2xl overflow-hidden border-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-sm transition"
               >
                 <NuxtLink :to="project.url" target="_blank">
                   <img class="h-40 w-full object-cover" :src="project.image" alt="" loading="lazy" />
