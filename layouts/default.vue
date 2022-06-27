@@ -6,14 +6,13 @@ const user = useSupabaseUser()
 const { user: userStore } = useUserStore()
 
 await useLazyAsyncData(
-  "user-id",
+  "user-info",
   async () => {
-    const { data: userData } = await client.from<Users>("users").select("*").eq("id", user.value.id).single()
-    const { data: subscriptionData } = await client
-      .from<Subscription>("subscriptions")
-      .select("*")
-      .eq("user_id", user.value.id)
-      .single()
+    const [{ data: userData }, { data: subscriptionData }] = await Promise.all([
+      client.from<Users>("users").select("*").eq("id", user.value.id).single(),
+      client.from<Subscription>("subscriptions").select("*").eq("user_id", user.value.id).single(),
+    ])
+
     userStore.value = {
       ...userData,
       subscription: subscriptionData,
