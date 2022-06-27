@@ -27,6 +27,10 @@ const addWidget = () => {
 }
 
 refresh()
+
+definePageMeta({
+  middleware: "auth",
+})
 </script>
 
 <template>

@@ -25,8 +25,8 @@ const items = ref<MenuItem[]>([
   {
     label: "Logout",
     icon: "pi pi-fw pi-sign-out",
-    command: () => {
-      client.auth.signOut()
+    command: async () => {
+      await client.auth.signOut()
       navigateTo("/login")
     },
   },
