@@ -16,6 +16,12 @@ const login = (provider: Provider) => {
     { redirectTo: window.location.origin + "/dashboard" }
   )
 }
+
+const { hash } = useRoute()
+onMounted(() => {
+  if (hash.includes("access_token")) isLoading.value = true
+})
+
 watch(user, (n) => {
   if (!n?.id) return
   navigateTo("/dashboard")
