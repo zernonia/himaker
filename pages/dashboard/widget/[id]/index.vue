@@ -43,7 +43,7 @@ const setImage = (ev: string, index: number) => {
     <label for="maker_name">Name</label>
     <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="hiMaker 👋🏻"></InputText>
 
-    <h3>Images</h3>
+    <h3>Images <span v-if="!isSuperUser" class="text-gray-400 font-normal text-sm ml-2">(Max 3)</span></h3>
     <div class="flex items-center w-full overflow-x-auto">
       <Container
         style="width: max-content; overflow-x: auto"
@@ -73,6 +73,7 @@ const setImage = (ev: string, index: number) => {
         </Draggable>
       </Container>
     </div>
+
     <div class="flex space-x-4">
       <Button
         :disabled="isMax3Image"

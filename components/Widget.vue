@@ -11,6 +11,7 @@ const props = defineProps({
 })
 
 const images = computed(() => props.widget.heading.images.filter((i) => i))
+const links = computed(() => props.widget.links[0].list.filter((i) => i.title))
 const projects = computed(() => props.widget.projects.filter((i) => i.image))
 const modules = [Navigation]
 
@@ -45,7 +46,7 @@ onMounted(() => (mounted.value = "1"))
       <NuxtLink
         :to="link.url"
         target="_blank"
-        v-for="link in widget.links[0].list"
+        v-for="link in links"
         :style="`color: ${widget.style.text_secondary}; background: ${widget.style.bg_primary};`"
         class="flex items-center px-6 py-3 rounded-xl transition font-semibold mb-2 transform scale-100 shadow-transparent hover:scale-101 hover:shadow-lg"
       >

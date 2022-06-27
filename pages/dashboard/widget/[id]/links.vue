@@ -2,8 +2,10 @@
 import { mapIcon } from "mapping"
 
 const widget = useWidgetStore()
+const { isSuperUser } = useUserStore()
 const { list } = toRefs(widget.value.links[0])
 const { onDrop, applyDrag } = useDnd(list)
+const isMax10Link = computed(() => !isSuperUser && list.value.length >= 10)
 
 const addLink = () => {
   list.value.push({
@@ -35,7 +37,7 @@ const iconOptions = ref([
     <!-- <label for="maker_links">Title</label>
     <InputText v-model="widget.links[0].title" id="maker_links" name="maker_links" placeholder="Zernonia"></InputText> -->
 
-    <h3>Social Link</h3>
+    <h3>Social Link <span v-if="!isSuperUser" class="text-gray-400 font-normal text-sm ml-2">(Max 10)</span></h3>
 
     <Container orientation="vertical" @drop="onDrop" drag-handle-selector=".handle">
       <Draggable v-for="(item, i) in list" :key="i">
@@ -70,6 +72,18 @@ const iconOptions = ref([
         </div>
       </Draggable>
     </Container>
-    <Button @click="addLink" icon="pi pi-plus" class="p-button-rounded p-button-sm !mt-2 !w-10 !h-10"></Button>
+
+    <div class="flex space-x-4">
+      <Button
+        :disabled="isMax10Link"
+        @click="addLink"
+        icon="pi pi-plus"
+        class="p-button-rounded p-button-sm !mt-2 !w-10 !h-10"
+      ></Button>
+      <div v-if="isMax10Link" class="text-red-500">
+        <p class="inline-flex items-center">Max links added, upgrade to <TagSuper class="ml-2"></TagSuper></p>
+        <p>to have unlimited link.</p>
+      </div>
+    </div>
   </div>
 </template>

@@ -2,10 +2,12 @@
 import LogoSuper from "~~/assets/images/logoSuper.svg"
 
 const { goSuper } = useSuper()
+const { isSuperUser, user } = useUserStore()
 </script>
 
 <template>
   <button
+    v-if="!isSuperUser && user?.subscription"
     class="px-3 py-1.5 rounded-lg bg-dark-500 text-white text-[10px] flex items-center space-x-2 font-semibold"
     @click="goSuper"
   >

@@ -2,6 +2,7 @@
 import LogoSuper from "~~/assets/images/logoSuper.svg"
 
 const widget = useWidgetStore()
+const { isSuperUser } = useUserStore()
 const { goSuper } = useSuper()
 const { settings } = toRefs(widget.value)
 </script>
@@ -9,6 +10,7 @@ const { settings } = toRefs(widget.value)
 <template>
   <div class="p-6 w-full bg-gray-50 rounded-xl flex flex-col space-y-4 form">
     <button
+      v-if="!isSuperUser"
       @click="goSuper"
       class="group relative bg-white hover:bg-primary transition border border-dashed rounded-xl py-16 px-4"
     >
@@ -32,7 +34,7 @@ const { settings } = toRefs(widget.value)
       <InputSwitch v-model="settings.remove_branding"></InputSwitch>
     </div>
 
-    <div class="pointer-events-none opacity-30">
+    <!-- <div class="pointer-events-none opacity-30">
       <div class="flex items-center space-x-4 mb-2">
         <label for="remove_branding">Collect feedback</label>
         <TagSuper></TagSuper>
@@ -48,6 +50,6 @@ const { settings } = toRefs(widget.value)
         <p class="text-sm">-- Coming soon --</p>
       </div>
       <InputSwitch v-model="settings.analytics"></InputSwitch>
-    </div>
+    </div> -->
   </div>
 </template>

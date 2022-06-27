@@ -4,6 +4,7 @@ import type { MenuItem } from "primevue/menuitem"
 
 const user = useSupabaseUser()
 const client = useSupabaseClient()
+const { goSuper } = useSuper()
 const menu = ref()
 const items = ref<MenuItem[]>([
   {
@@ -17,9 +18,9 @@ const items = ref<MenuItem[]>([
   //   to: "/dashboard/settings",
   // },
   {
-    label: "Pro",
+    label: "SUPER!",
     icon: "pi pi-fw pi-star",
-    command: () => ({}),
+    command: () => goSuper(),
   },
   {
     label: "Logout",
