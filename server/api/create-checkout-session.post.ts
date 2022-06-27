@@ -6,7 +6,7 @@ import { sendError } from "h3"
 
 // let user add product then checkout
 export default defineEventHandler(async (event) => {
-  const { price, quantity = 1, metadata = {} } = await useBody(event)
+  const { price, redirectTo, quantity = 1, metadata = {} } = await useBody(event)
   const user = await serverSupabaseUser(event)
 
   try {
@@ -31,8 +31,8 @@ export default defineEventHandler(async (event) => {
         trial_from_plan: true,
         metadata,
       },
-      success_url: `${getURL()}/dashboard/settings/account`,
-      cancel_url: `${getURL()}/dashboard`,
+      success_url: redirectTo ?? `${getURL()}/dashboard/settings/account`,
+      cancel_url: redirectTo ?? `${getURL()}/dashboard`,
     })
 
     return { sessionId: session.id }

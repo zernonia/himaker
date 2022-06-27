@@ -1,5 +1,4 @@
 <script setup lang="ts">
-//@ts-ignore
 import Logo from "~/assets/images/logo.png"
 import type { MenuItem } from "primevue/menuitem"
 
@@ -12,11 +11,11 @@ const items = ref<MenuItem[]>([
     icon: "pi pi-fw pi-home",
     to: "/",
   },
-  {
-    label: "Settings",
-    icon: "pi pi-fw pi-user",
-    to: "/dashboard/settings",
-  },
+  // {
+  //   label: "Settings",
+  //   icon: "pi pi-fw pi-user",
+  //   to: "/dashboard/settings",
+  // },
   {
     label: "Pro",
     icon: "pi pi-fw pi-star",

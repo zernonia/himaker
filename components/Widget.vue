@@ -109,7 +109,7 @@ onMounted(() => (mounted.value = "1"))
       </div>
     </section>
 
-    <section v-if="!widget.settings.remove_branding" id="footer" class="mt-8 mb-4">
+    <section v-if="!widget.settings.remove_branding" id="settings" class="mt-8 mb-4">
       <div class="w-full text-sm flex items-center justify-center group">
         <img
           class="w-6 h-6 transform -rotate-5 group-hover:-rotate-15 transition mr-4"

@@ -45,7 +45,7 @@ const previewEl = ref<HTMLDivElement>()
 watch(childPath, (n, o) => {
   if (!n || isOpen.value) return
   let selector = n.replace("/", "")
-  selector = selector == "" ? "#heading" : "#" + selector
+  selector = selector == "" ? "#top" : "#" + selector
 
   let section = previewEl.value.querySelector(selector)
   const headerOffset = selector === "#projects" ? 150 : 180

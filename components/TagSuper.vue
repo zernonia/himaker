@@ -1,29 +1,15 @@
 <script setup lang="ts">
-import { getStripe } from "~~/utils/stripe-client"
+import LogoSuper from "~~/assets/images/logoSuper.svg"
 
-const { isSuperUser, user } = useUserStore()
-const goSuper = async () => {
-  console.log("SUPER!!!")
-  try {
-    const { sessionId } = await $fetch("/api/create-checkout-session", {
-      method: "POST",
-      body: { price: "price_1LEt2EJvLKxh6TtRISqDgCvj" },
-    })
-    const stripe = await getStripe()
-    stripe?.redirectToCheckout({ sessionId })
-  } catch (err) {
-    console.log(err)
-  }
-}
+const { goSuper } = useSuper()
 </script>
 
 <template>
   <button
-    v-if="!isSuperUser && user?.subscription"
     class="px-3 py-1.5 rounded-lg bg-dark-500 text-white text-[10px] flex items-center space-x-2 font-semibold"
     @click="goSuper"
   >
-    <p class="text-xs">🚀</p>
+    <img :src="LogoSuper" alt="go Super!" class="w-4 mb-0.5" />
     <p>SUPER</p>
   </button>
 </template>
