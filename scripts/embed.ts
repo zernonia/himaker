@@ -22,9 +22,10 @@ window.onload = function () {
     left: 1rem;
     position: fixed;
     overflow: hidden;
+    z-index: 99999999;
 } 
 .himaker-panel {
-    --tw-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px -6px rgb(0 0 0/0.1);
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px 6px rgb(0 0 0/0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);
     bottom: 5rem;
     height: 600px;
@@ -56,6 +57,7 @@ window.onload = function () {
   height: 3rem;
   overflow: hidden;
   width: 12rem; 
+  background: white;
 }
 .himaker-trigger button {
   width: 100%;
@@ -98,9 +100,10 @@ window.onload = function () {
   containerPanel.style.display = "none"
   containerPanel.style.transform = "translateY(50px)"
   containerPanel.classList.add("himaker-panel")
+  const containerPanelIframe = constructIframe(`${url}/widget/panel?${searchParams}`)
   const wrapper = document.createElement("div")
   wrapper.append(containerCloseButton)
-  wrapper.append(constructIframe(`${url}/widget/panel?${searchParams}`))
+  wrapper.append(containerPanelIframe)
   containerPanel.append(wrapper)
 
   container.append(style)
@@ -124,6 +127,22 @@ window.onload = function () {
       closePanel()
     }
   }
+
+  var s = { insideIframe: false, scrollX: 0, scrollY: 0 }
+
+  containerPanelIframe.addEventListener("mouseenter", function () {
+    s.insideIframe = true
+    s.scrollX = window.scrollX
+    s.scrollY = window.scrollY
+  })
+
+  containerPanelIframe.addEventListener("mouseleave", function () {
+    s.insideIframe = false
+  })
+
+  document.addEventListener("scroll", function () {
+    if (s.insideIframe) window.scrollTo(s.scrollX, s.scrollY)
+  })
 
   const openPanel = () => {
     isOpen = true
