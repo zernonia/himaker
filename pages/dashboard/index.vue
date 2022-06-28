@@ -37,7 +37,9 @@ definePageMeta({
   <div>
     <Button class="!mb-4" label="Add widget" icon="pi pi-plus" iconPos="right" @click="addWidget"></Button>
 
-    <div v-if="pending && !widgetList?.length">Loading..</div>
+    <div class="flex items-center justify-center py-32" v-if="pending && !widgetList?.length">
+      <Loader></Loader>
+    </div>
     <div v-else v-for="info in widgetList" class="mb-6">
       <NuxtLink :to="`/dashboard/widget/${info.id}/`">
         <div
