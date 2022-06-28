@@ -8,12 +8,12 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
 
 <template>
   <div>
-    <section class="py-32 flex flex-col items-center">
-      <h1 class="text-6xl text-center font-semibold">
+    <section class="py-16 md:py-32 flex flex-col items-center">
+      <h1 class="text-3xl sm:text-6xl text-center font-semibold">
         Embed & Showcase <br />
         your projects on websites
       </h1>
-      <p class="py-8 text-center text-primary font-semibold text-2xl">
+      <p class="py-8 text-center text-primary font-semibold text-lg sm:text-2xl">
         Easily share your social link, project, <br />
         or any link with your visitors
       </p>
@@ -24,34 +24,34 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
           :src="Logo"
           alt="hi Maker logo"
         />
-        <Button label="Give it a try" class="!text-xl p-button-secondary"></Button>
+        <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
       </NuxtLink>
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-4xl font-semibold text-gray-300 flex items-center">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-gray-300 flex items-center">
         <img :src="Logo" alt="hi Maker logo" class="w-12 mr-4" />
         Made for ...
       </h2>
-      <div class="grid grid-cols-3 w-full mt-8">
-        <div class="flex flex-col items-center space-y-6">
-          <h3 class="text-3xl">Indie Hacker</h3>
+      <div class="grid lg:grid-cols-3 place-items-center gap-8 w-full mt-8">
+        <div class="w-84 flex flex-col items-center space-y-6">
+          <h3 class="text-xl sm:text-3xl">Indie Hacker</h3>
           <Widget
             class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
             :widget="widgetIndieHacker"
           ></Widget>
         </div>
 
-        <div class="flex flex-col items-center space-y-6">
-          <h3 class="text-3xl">Developer</h3>
+        <div class="w-84 flex flex-col items-center space-y-6">
+          <h3 class="text-xl sm:text-3xl">Developer</h3>
           <Widget
             class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
             :widget="widgetIndieHacker"
           ></Widget>
         </div>
 
-        <div class="flex flex-col items-center space-y-6">
-          <h3 class="text-3xl">Content Creator</h3>
+        <div class="w-84 flex flex-col items-center space-y-6">
+          <h3 class="text-xl sm:text-3xl">Content Creator</h3>
           <Widget
             class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
             :widget="widgetIndieHacker"
@@ -61,32 +61,36 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-4xl font-semibold text-dark-500 flex items-center">Pricing</h2>
-      <div class="mt-8 grid grid-cols-2 p-16 rounded-4xl bg-primary w-full gap-6">
-        <div class="p-8">
-          <div class="w-full group flex flex-col items-center p-10 border-4 bg-white rounded-3xl border-transparent">
-            <div class="flex flex-col items-center">
-              <img :src="Logo" alt="free plan logo" class="w-28" />
-              <h3 class="px-6 py-3 rounded-xl text-3xl font-semibold w-max">Free</h3>
-            </div>
-            <div class="mt-10 list-none text-lg flex flex-col space-y-1">
-              <li class="flex items-center">
-                <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
-                up to 3 widgets
-              </li>
-              <li class="flex items-center">
-                <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
-                up to 3 users in Widget
-              </li>
-              <li class="flex items-center">
-                <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
-                up to 10 links in Widget
-              </li>
-            </div>
+      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Pricing</h2>
+      <div
+        class="mt-8 flex flex-col sm:flex-row items-center p-8 md:p-16 rounded-4xl bg-primary w-full space-y-4 sm:space-y-0 sm:space-x-6"
+      >
+        <div
+          class="w-full sm:w-1/2 group flex flex-col items-center p-6 md:p-10 border-4 bg-white rounded-3xl border-transparent"
+        >
+          <div class="flex flex-col items-center">
+            <img :src="Logo" alt="free plan logo" class="w-28" />
+            <h3 class="px-6 py-3 rounded-xl text-3xl font-semibold w-max">Free</h3>
+          </div>
+          <div class="mt-10 list-none text-lg flex flex-col space-y-1">
+            <li class="flex items-center">
+              <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
+              up to 3 widgets
+            </li>
+            <li class="flex items-center">
+              <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
+              up to 3 users in Widget
+            </li>
+            <li class="flex items-center">
+              <p class="i-ion-md-arrow-dropright text-2xl mr-2"></p>
+              up to 10 links in Widget
+            </li>
           </div>
         </div>
 
-        <div class="w-full group flex flex-col items-center p-10 border-4 border-dark-500 bg-white rounded-3xl">
+        <div
+          class="w-full sm:w-1/2 group flex flex-col items-center p-6 md:p-10 border-4 border-dark-500 bg-white rounded-3xl"
+        >
           <div class="flex flex-col items-center">
             <img
               :src="LogoSuper"
@@ -129,9 +133,11 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
       </div>
     </section>
 
-    <section class="py-16 flex items-start space-x-12 mx-auto text-dark-500 !max-w-screen-md">
-      <div class="text-lg">
-        <h4 class="text-gray-300 text-4xl font-semibold">hi Maker!</h4>
+    <section
+      class="py-16 flex flex-col-reverse sm:flex-row items-center sm:items-start sm:space-x-12 mx-auto text-dark-500 !max-w-screen-md"
+    >
+      <div class="sm:text-lg">
+        <h4 class="text-gray-300 text-2xl sm:text-4xl font-semibold">hi Maker!</h4>
         <p class="mt-4">I'm Zernonia, the maker of hi Maker!</p>
         <br />
         <p>
@@ -150,7 +156,7 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
 
         <p>Check out my project by clicking the button on the bottom-left corner 😁</p>
       </div>
-      <div class="flex-shrink-0 w-64 h-86">
+      <div class="flex-shrink-0 w-64 h-86 mb-12 sm:mb-0">
         <img class="rounded-2xl w-full h-full object-cover" :src="Maker" alt="maker - zernonia" />
       </div>
     </section>

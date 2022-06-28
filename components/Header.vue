@@ -35,7 +35,7 @@ const items = ref<MenuItem[]>([
 
 <template>
   <div class="flex items-center justify-between">
-    <NuxtLink :to="user?.id ? '/dashboard' : '/'" class="flex items-center text-4xl font-semibold">
+    <NuxtLink :to="user?.id ? '/dashboard' : '/'" class="flex items-center text-2xl sm:text-4xl font-semibold">
       <img :src="Logo" alt="hiMaker logo" class="w-12 mr-2" />
       <span>hi Maker</span>
     </NuxtLink>
