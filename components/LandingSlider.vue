@@ -19,18 +19,18 @@ const { pause, resume, isActive } = useIntervalFn(() => {
     <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
       <Button
         @click="currentSlide = 0"
-        :class="{ 'p-button-secondary': currentSlide != 0 }"
+        :class="{ 'p-button-outlined': currentSlide != 0 }"
         class="!sm:text-lg"
         label="Indie Hacker"
       ></Button>
       <Button
-        :class="{ 'p-button-secondary': currentSlide != 1 }"
+        :class="{ 'p-button-outlined': currentSlide != 1 }"
         @click="currentSlide = 1"
         class="!sm:text-lg"
         label="Developer"
       ></Button>
       <Button
-        :class="{ 'p-button-secondary': currentSlide != 2 }"
+        :class="{ 'p-button-outlined': currentSlide != 2 }"
         @click="currentSlide = 2"
         class="!sm:text-lg"
         label="Content Creator"

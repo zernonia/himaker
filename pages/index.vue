@@ -29,9 +29,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
       <div class="flex flex-col-reverse md:flex-row items-center mt-6 md:mt-12">
         <div class="text-center md:text-left">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
-          <p class="max-w-80 text-lg mt-4">
-            Embed the widget on your website to share your social link and project easily
-          </p>
+          <p class="max-w-80 text-lg mt-4">Embed the widget on your website easily by simply adding 1 line of code</p>
         </div>
         <img
           class="px-12 md:px-0 mb-6 md:mb-0 md:ml-6"
@@ -55,9 +53,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
       <div class="flex flex-col-reverse md:flex-row items-center mt-12">
         <div class="text-center md:text-left">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">03. Customization</h2>
-          <p class="max-w-80 text-lg mt-4">
-            Everybody loves customization, you can easily customize it to your liking.
-          </p>
+          <p class="max-w-80 text-lg mt-4">Everybody loves customization, you can easily customize it to your liking</p>
         </div>
         <img
           class="px-12 md:px-0 mb-6 md:mb-0 md:ml-12"
@@ -73,6 +69,15 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         Made for ...
       </h2>
       <LandingSlider></LandingSlider>
+
+      <NuxtLink to="/login" class="mt-16 group relative">
+        <img
+          class="absolute left-0 top-0 h-12 transition-all transform rotate-0 group-hover:-top-6 group-hover:-left-6 group-hover:-rotate-15"
+          :src="Logo"
+          alt="HiMaker logo"
+        />
+        <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
+      </NuxtLink>
     </section>
 
     <section class="py-16 flex flex-col items-center">
