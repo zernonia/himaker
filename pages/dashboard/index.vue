@@ -15,6 +15,9 @@ const { pending, refresh } = await useLazyAsyncData(
       .order("created_at", { ascending: true })
     if (data) {
       widgetList.value = data
+      if (data.length == 0) {
+        addWidget()
+      }
       return data
     } else {
       throw new Error(error.message)

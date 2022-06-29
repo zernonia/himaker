@@ -17,7 +17,7 @@ export default defineNuxtPlugin(() => {
   watch(
     path,
     (n) => {
-      if (n.includes("widget") || n.includes("dashboard")) {
+      if (n.includes("widget")) {
         if (head.querySelector("#umami")) {
           head.removeChild(umamiScript)
         }
