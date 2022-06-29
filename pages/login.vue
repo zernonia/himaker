@@ -37,7 +37,7 @@ definePageMeta({
   <div class="mx-auto mt-20 flex flex-col items-center w-max space-y-3">
     <img :src="Logo" class="w-44" alt="HiMaker logo" />
     <h2 class="!-mt-16 text-4xl font-semibold !mb-10">Login</h2>
-    <Button :loading="isLoading" class="flex items-center space-x-2 p-button-secondary" @click="login('github')">
+    <Button :loading="isLoading" class="!mt-16 flex items-center space-x-2 p-button-secondary" @click="login('github')">
       <div class="i-ion-logo-github text-2xl"></div>
       <p class="text-lg font-semibold">Login with GitHub</p>
     </Button>
@@ -45,5 +45,9 @@ definePageMeta({
       <div class="i-ion-logo-google text-2xl"></div>
       <p class="text-lg font-semibold">Login with Google</p>
     </Button>
+
+    <p class="pt-4 max-w-64 text-xs">
+      By logging in, you are agree to the <NuxtLink to="/terms-of-service"> term of service</NuxtLink>
+    </p>
   </div>
 </template>
