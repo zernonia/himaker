@@ -6,4 +6,5 @@ export const mapIcon = {
   pinterest: "i-ion-logo-pinterest",
   github: "i-ion-logo-github",
   dribbble: "i-ion-logo-dribbble",
+  linkedin: "i-ion-logo-linkedin",
 }

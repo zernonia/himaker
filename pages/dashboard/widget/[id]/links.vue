@@ -29,6 +29,7 @@ const iconOptions = ref([
   { name: "Pinterest", value: "pinterest" },
   { name: "GitHub", value: "github" },
   { name: "Dribbble", value: "dribbble" },
+  { name: "LinkedIn", value: "linkedin" },
 ])
 </script>
 

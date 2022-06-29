@@ -27,6 +27,7 @@ export default defineNuxtConfig({
       "i-ion-logo-pinterest",
       "i-ion-logo-github",
       "i-ion-logo-dribbble",
+      "i-ion-logo-linkedin",
     ],
   },
   build: {
