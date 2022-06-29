@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import { useIntervalFn } from "@vueuse/core"
+
 import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/utils/constant"
 const currentSlide = ref(0)
+
+const { pause, resume, isActive } = useIntervalFn(() => {
+  /* your function */
+  if (currentSlide.value == 2) {
+    currentSlide.value = 0
+  } else {
+    currentSlide.value++
+  }
+}, 3000)
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full mt-8">
+  <div @mouseenter="pause" @mouseleave="resume" class="flex flex-col items-center w-full mt-8">
     <div class="flex space-x-4">
       <Button
         @click="currentSlide = 0"
