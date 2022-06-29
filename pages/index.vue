@@ -10,9 +10,8 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         Embed & Showcase <br />
         your projects on websites
       </h1>
-      <p class="py-8 text-center text-primary font-semibold text-xl sm:text-2xl">
-        Easily share your social link, project, <br />
-        or any link with your visitors
+      <p class="max-w-94 md:w-114 py-8 text-center text-primary font-semibold text-xl sm:text-2xl">
+        Easily share your social link, project, or any link with your visitors
       </p>
 
       <NuxtLink to="/login" class="group relative">
@@ -79,7 +78,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     <section class="py-16 flex flex-col items-center">
       <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">Pricing</h2>
       <div
-        class="mt-8 flex flex-col sm:flex-row items-center p-8 md:p-16 rounded-4xl bg-primary w-full space-y-4 sm:space-y-0 sm:space-x-6"
+        class="mt-8 flex flex-col sm:flex-row items-center p-4 sm:p-8 md:p-16 rounded-4xl bg-primary w-full space-y-4 sm:space-y-0 sm:space-x-6"
       >
         <div
           class="w-full sm:w-1/2 group flex flex-col items-center p-6 md:p-10 border-4 bg-white rounded-3xl border-transparent"

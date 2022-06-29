@@ -10,7 +10,7 @@ watch(user, () => {
 </script>
 
 <template>
-  <div class="p-8 pb-16 max-w-screen-lg mx-auto">
+  <div class="p-4 md:p-8 pb-16 max-w-screen-lg mx-auto">
     <Header></Header>
     <NuxtPage class="mt-8"></NuxtPage>
 
