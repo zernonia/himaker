@@ -19,7 +19,7 @@ const srcString = computed(
   s.src= "https://www.himaker.io/scripts/embed.min.js" 
   s.async = true
   s.defer = true
-  s.dataset.id = '${id}' 
+  s.dataset.widgetId = '${id}' 
 </` + "script>"
 )
 

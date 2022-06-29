@@ -1,4 +1,5 @@
-window.onload = function () {
+;
+(function () {
     var url = window.location.hostname === "localhost" ? "http://localhost:3000" : "https://himaker.io";
     var payload = document.querySelector("[data-widget-id]");
     //@ts-ignore
@@ -86,4 +87,4 @@ window.onload = function () {
             containerPanel.style.display = "none";
         }, 150);
     };
-};
+})();
