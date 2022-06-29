@@ -183,5 +183,6 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         <img class="rounded-2xl w-full h-full object-cover" src="~/assets/images/maker.png" alt="maker - zernonia" />
       </div>
     </section>
+    <Footer></Footer>
   </div>
 </template>

@@ -20,4 +20,5 @@ export default defineConfig({
       },
     },
   },
+  plugins: [require("windicss/plugin/typography")],
 })
