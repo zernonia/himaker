@@ -10,7 +10,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         Embed & Showcase <br />
         your projects on websites
       </h1>
-      <p class="max-w-94 md:w-114 py-8 text-center text-primary font-semibold text-xl sm:text-2xl">
+      <p class="max-w-94 md:w-114 md:max-w-none py-8 text-center text-primary font-semibold text-xl sm:text-2xl">
         Easily share your social link, project, or any link with your visitors
       </p>
 
