@@ -4,6 +4,8 @@ export default defineEventHandler(async (event) => {
   if (url.includes("/widget/")) {
     // cache 15mins
     event.res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate")
-  } else if (url) {
+  } else if (url.includes("/dashboard")) {
+  } else {
+    event.res.setHeader("Cache-Control", "s-maxage=7200, stale-while-revalidate")
   }
 })
