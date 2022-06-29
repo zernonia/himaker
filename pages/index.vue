@@ -18,7 +18,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         <img
           class="absolute left-0 top-0 h-12 transition-all transform rotate-0 group-hover:-top-6 group-hover:-left-6 group-hover:-rotate-15"
           :src="Logo"
-          alt="HiMaker logo"
+          alt="Hi Maker logo"
         />
         <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
       </NuxtLink>
@@ -27,7 +27,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     <section class="py-16 flex flex-col items-center">
       <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">
         Features
-        <img class="w-12 ml-4" :src="Logo" alt="HiMaker logo" />
+        <img class="w-12 ml-4" :src="Logo" alt="Hi Maker logo" />
       </h2>
       <div class="flex flex-col-reverse md:flex-row items-center mt-6 md:mt-12">
         <div class="text-center md:text-left">
@@ -68,7 +68,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
 
     <section class="py-16 flex flex-col items-center">
       <h2 class="text-3xl sm:text-4xl font-semibold text-gray-300 flex items-center">
-        <img :src="Logo" alt="HiMaker logo" class="w-12 mr-4" />
+        <img :src="Logo" alt="Hi Maker logo" class="w-12 mr-4" />
         Made for ...
       </h2>
       <LandingSlider></LandingSlider>
@@ -77,7 +77,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         <img
           class="absolute left-0 top-0 h-12 transition-all transform rotate-0 group-hover:-top-6 group-hover:-left-6 group-hover:-rotate-15"
           :src="Logo"
-          alt="HiMaker logo"
+          alt="Hi Maker logo"
         />
         <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
       </NuxtLink>
@@ -161,18 +161,18 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     >
       <div class="sm:text-lg text-center sm:text-left">
         <h4 class="text-gray-300 text-3xl sm:text-4xl font-semibold">Hi Maker!</h4>
-        <p class="mt-4">I'm Zernonia, the maker of HiMaker!</p>
+        <p class="mt-4">I'm Zernonia, the maker of Hi Maker!</p>
         <br />
         <p>
           There are tons of Linktree/Biolink kind of website that allow people on the internet to follow the you easily,
           but I wanted more than that! I wanted to share my social links, and showcase my project all everywhere. Thus
-          I've created <strong>HiMaker!</strong>
+          I've created <strong>Hi Maker!</strong>
         </p>
         <br />
 
         <p>
-          HiMaker allow <strong>IndieHackers, Developers or Content Creator</strong> like you to easily create their
-          social links, and showcase their project on any website they wanted! HiMaker is aim to increase your
+          Hi Maker allow <strong>IndieHackers, Developers or Content Creator</strong> like you to easily create their
+          social links, and showcase their project on any website they wanted! Hi Maker is aim to increase your
           publicity, your projects' publicity and increase engagement with your audience.
         </p>
         <br />

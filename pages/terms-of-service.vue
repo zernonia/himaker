@@ -5,7 +5,7 @@
     <h1>Terms of Service</h1>
     <p>Last updated: June 29, 2022</p>
     <p>
-      We put together Terms &amp; Conditions for using HiMaker, so you know how we handle legal things when you use our
+      We put together Terms &amp; Conditions for using Hi Maker, so you know how we handle legal things when you use our
       product. When you decide to use our product, website and software, you agree to this Terms of Use Agreement and to
       our Privacy Policy <NuxtLink to="/privacy">https://himaker.io/privacy</NuxtLink>, that will tell you how we handle
       your data.
@@ -15,7 +15,7 @@
       service, feel free to contact us at zernonia@gmail.com. We’re nice people trying to create a good experience for
       everyone.
     </p>
-    <h2>HiMaker Terms of Usage (“Agreement”)</h2>
+    <h2>Hi Maker Terms of Usage (“Agreement”)</h2>
     <p>
       Please read these Terms of Usage (“Agreement”, “Terms of Usage”) carefully before using
       <NuxtLink to="/">https://himaker.io</NuxtLink> (“our site”, “our service”, “our services”) operated by Nifty
@@ -36,7 +36,7 @@
     </p>
     <p>
       You are responsible for any infringement of copyrights, contract rights, intellectual property rights, privacy or
-      publicity rights with any content you create with our service. By using HiMaker you agree that you have explicit
+      publicity rights with any content you create with our service. By using Hi Maker you agree that you have explicit
       permissions to use any content that you upload. We are not responsible for any claims and expenses arising out of
       your violation of this agreement.
     </p>
@@ -73,8 +73,8 @@
     </p>
     <h4>Data Protection</h4>
     <p>
-      With signing up for HiMaker you agree that your personal data (only your e-mail address) will be collected, stored
-      and processed electronically for providing our service (f.ex. for billing and login purposes).
+      With signing up for Hi Maker you agree that your personal data (only your e-mail address) will be collected,
+      stored and processed electronically for providing our service (f.ex. for billing and login purposes).
     </p>
     <p>We may send you information about updates, billing and our service in general via e-mail.</p>
     <p>

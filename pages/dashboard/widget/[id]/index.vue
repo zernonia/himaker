@@ -30,7 +30,7 @@ const setImage = (ev: string, index: number) => {
 <template>
   <div class="p-6 w-full bg-gray-50 rounded-xl flex flex-col form">
     <label for="title">Button Label</label>
-    <InputText v-model="widget.heading.title" id="title" name="title" placeholder="By hiMaker 👋🏻"></InputText>
+    <InputText v-model="widget.heading.title" id="title" name="title" placeholder="By Hi Maker 👋🏻"></InputText>
 
     <label for="headline">Headline</label>
     <InputText
@@ -41,7 +41,7 @@ const setImage = (ev: string, index: number) => {
     ></InputText>
 
     <label for="maker_name">Name</label>
-    <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="hiMaker 👋🏻"></InputText>
+    <InputText v-model="widget.heading.name" id="maker_name" name="maker_name" placeholder="Hi Maker 👋🏻"></InputText>
 
     <h3>Images <span v-if="!isSuperUser" class="text-gray-400 font-normal text-sm ml-2">(Max 3)</span></h3>
     <div class="flex items-center w-full overflow-x-auto">

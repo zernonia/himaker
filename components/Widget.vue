@@ -38,7 +38,7 @@ onMounted(() => (mounted.value = "1"))
         {{ widget.heading.headline !== "" ? widget.heading.headline : "This project is made by" }}
       </h3>
       <h2 :style="`color: ${widget.style.text_primary}`" class="font-semibold text-2xl transition">
-        {{ widget.heading.name !== "" ? widget.heading.name : "hiMaker 👋🏻" }}
+        {{ widget.heading.name !== "" ? widget.heading.name : "Hi Maker 👋🏻" }}
       </h2>
     </section>
 
@@ -115,7 +115,7 @@ onMounted(() => (mounted.value = "1"))
         <img
           class="w-6 h-6 transform -rotate-5 group-hover:-rotate-15 transition mr-4"
           :src="Logo"
-          alt="HiMaker's logo"
+          alt="Hi Maker's logo"
         />
         <h4>
           Powered by
@@ -123,7 +123,7 @@ onMounted(() => (mounted.value = "1"))
             target="_blank"
             class="text-primary hover:text-primary-hover transition font-semibold"
             to="https://himaker.io"
-            >HiMaker</NuxtLink
+            >Hi Maker</NuxtLink
           >
         </h4>
       </div>

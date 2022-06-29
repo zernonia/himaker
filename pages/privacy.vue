@@ -77,7 +77,7 @@
       </li>
       <li>
         <p>
-          <strong>Website</strong> refers to HiMaker, accessible from
+          <strong>Website</strong> refers to Hi Maker, accessible from
           <a href="https://himaker.io" rel="external nofollow noopener" target="_blank">https://himaker.io</a>
         </p>
       </li>

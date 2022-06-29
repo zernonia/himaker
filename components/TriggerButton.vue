@@ -37,7 +37,7 @@ onMounted(() => {
       </template>
     </div>
     <p class="w-30 text-left truncate">
-      {{ widget.heading.title !== "" ? widget.heading.title : "By hiMaker 👋🏻" }}
+      {{ widget.heading.title !== "" ? widget.heading.title : "By Hi Maker 👋🏻" }}
     </p>
   </button>
 </template>
