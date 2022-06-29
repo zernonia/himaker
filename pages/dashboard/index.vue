@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { WidgetInfo } from "interface"
 
+const user = useSupabaseUser()
 const client = useSupabaseClient()
 const widgetList = useWidgetListStore()
 
@@ -10,6 +11,7 @@ const { pending, refresh } = await useLazyAsyncData(
     const { data, error } = await client
       .from<WidgetInfo>("widgets")
       .select("*")
+      .eq("user_id", user.value.id)
       .order("created_at", { ascending: true })
     if (data) {
       widgetList.value = data
