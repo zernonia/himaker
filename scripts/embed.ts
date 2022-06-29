@@ -17,9 +17,9 @@
 
   const style = document.createElement("style")
   style.innerHTML = `.himaker-panel, .himaker-trigger {
-    border-radius: 0.75rem;
+    border-radius: 10.5px;
     box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
-    left: 1rem;
+    left: 14px;
     position: fixed;
     overflow: hidden;
     z-index: 99999999;
@@ -27,11 +27,11 @@
 .himaker-panel {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0/0.1),0 8px 10px 6px rgb(0 0 0/0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);
-    bottom: 5rem;
+    bottom: 70px;
     height: 600px;
     background: white;
     overflow-x: hidden;
-    width: 21rem;
+    width: 294px;
     transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 .himaker-panel > div {
@@ -41,8 +41,8 @@
 }
 .himaker-panel > div > button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 14px;
+  right: 14px;
   opacity: 50%;
   transition: opacity 0.15s ease-in-out;
 }
@@ -52,11 +52,11 @@
 .himaker-trigger {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
-  bottom: 1rem;
+  bottom: 14px;
   cursor: pointer;
-  height: 3rem;
+  height: 42px;
   overflow: hidden;
-  width: 12rem; 
+  width: 168px; 
   background: white;
 }
 .himaker-trigger button {
@@ -68,8 +68,8 @@
 }
 @media screen and (max-width: 426px) { 
   .himaker-trigger { 
-    bottom: 0.5rem;  
-    left: 0.5rem;  
+    bottom: 7px;  
+    left: 7px;  
   }
   .himaker-panel {
     bottom: 0;
