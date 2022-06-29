@@ -20,6 +20,7 @@ const srcString = computed(
   s.async = true
   s.defer = true
   s.dataset.widgetId = '${id}' 
+  document.head.append(s)
 </` + "script>"
 )
 
