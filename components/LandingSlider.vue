@@ -1,0 +1,36 @@
+<script setup lang="ts">
+import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/utils/constant"
+const currentSlide = ref(0)
+</script>
+
+<template>
+  <div class="flex flex-col items-center w-full mt-8">
+    <div class="flex space-x-4">
+      <Button
+        @click="currentSlide = 0"
+        :class="{ 'p-button-secondary': currentSlide != 0 }"
+        class="!sm:text-lg"
+        label="Indie Hacker"
+      ></Button>
+      <Button
+        :class="{ 'p-button-secondary': currentSlide != 1 }"
+        @click="currentSlide = 1"
+        class="!sm:text-lg"
+        label="Developer"
+      ></Button>
+      <Button
+        :class="{ 'p-button-secondary': currentSlide != 2 }"
+        @click="currentSlide = 2"
+        class="!sm:text-lg"
+        label="Content Creator"
+      ></Button>
+    </div>
+    <div class="p-12 mt-6 w-full flex relative justify-center rounded-4xl bg-gray-100">
+      <Transition name="slide-down-fade" mode="out-in">
+        <Widget v-if="currentSlide == 0" :widget="widgetIndieHacker"></Widget>
+        <Widget v-else-if="currentSlide == 1" :widget="widgetDeveloper"></Widget>
+        <Widget v-else-if="currentSlide == 2" :widget="widgetContentCreator"></Widget>
+      </Transition>
+    </div>
+  </div>
+</template>

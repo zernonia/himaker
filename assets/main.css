@@ -36,6 +36,16 @@ input[type="color"]::-webkit-color-swatch {
   transform: translateX(30px);
   opacity: 0;
 }
+.slide-down-fade-enter-active,
+.slide-down-fade-leave-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-down-fade-enter-from,
+.slide-down-fade-leave-to {
+  transform: translateY(30px);
+  opacity: 0;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import Logo from "~~/assets/images/logo.svg"
 import LogoSuper from "~~/assets/images/logoSuper.svg"
-
-import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/utils/constant"
 </script>
 
 <template>
@@ -28,7 +26,7 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features</h2>
+      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features ✨</h2>
       <div class="flex items-center mt-12">
         <div>
           <h2 class="text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
@@ -67,31 +65,7 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
         <img :src="Logo" alt="HiMaker logo" class="w-12 mr-4" />
         Made for ...
       </h2>
-      <div class="grid lg:grid-cols-3 place-items-center gap-8 w-full mt-8">
-        <div class="w-84 flex flex-col items-center space-y-6">
-          <h3 class="text-xl sm:text-3xl">Indie Hacker</h3>
-          <Widget
-            class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
-            :widget="widgetIndieHacker"
-          ></Widget>
-        </div>
-
-        <div class="w-84 flex flex-col items-center space-y-6">
-          <h3 class="text-xl sm:text-3xl">Developer</h3>
-          <Widget
-            class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
-            :widget="widgetIndieHacker"
-          ></Widget>
-        </div>
-
-        <div class="w-84 flex flex-col items-center space-y-6">
-          <h3 class="text-xl sm:text-3xl">Content Creator</h3>
-          <Widget
-            class="!shadow-lg ring ring-transparent transition-all hover:ring-dark-500 hover:border-dark-500"
-            :widget="widgetIndieHacker"
-          ></Widget>
-        </div>
-      </div>
+      <LandingSlider></LandingSlider>
     </section>
 
     <section class="py-16 flex flex-col items-center">
