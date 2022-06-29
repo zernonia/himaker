@@ -13,7 +13,7 @@ const login = (provider: Provider) => {
     {
       provider,
     },
-    { redirectTo: window.location.origin + "/dashboard" }
+    { redirectTo: window.location.origin + "/login" }
   )
 }
 
