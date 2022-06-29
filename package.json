@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "tsc": "tsc -p tsconfig-dev.json --watch",
-    "uglify": "uglifyjs public/scripts/embed.js --output public/scripts/embed.min.js "
+    "uglify": "uglifyjs public/scripts/embed.js --output scripts/embed.min.js "
   },
   "devDependencies": {
     "@iconify-json/ion": "^1.1.2",
