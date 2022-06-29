@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Logo from "~~/assets/images/logo.svg"
 import LogoSuper from "~~/assets/images/logoSuper.svg"
-import Maker from "~~/assets/images/maker.png"
 
 import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/utils/constant"
 </script>
@@ -22,15 +21,50 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
         <img
           class="absolute left-0 top-0 h-12 transition-all transform rotate-0 group-hover:-top-6 group-hover:-left-6 group-hover:-rotate-15"
           :src="Logo"
-          alt="hi Maker logo"
+          alt="HiMaker logo"
         />
         <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
       </NuxtLink>
     </section>
 
     <section class="py-16 flex flex-col items-center">
+      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features</h2>
+      <div class="flex items-center mt-12">
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
+          <p class="max-w-80 text-lg mt-4">
+            Embed the widget on your website to share your social link and project easily
+          </p>
+        </div>
+        <img class="ml-6" src="~/assets/images/landing/embed-website.png" alt="embed widget in your website" />
+      </div>
+      <div class="flex items-center mt-12">
+        <img class="mr-12" src="~/assets/images/landing/social-links.png" alt="share your social links and projects" />
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-300">02. Social Links & Projects</h2>
+          <p class="max-w-80 text-lg mt-4">
+            Share your social and project for your audience to easily follow you and your work!
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center mt-12">
+        <div>
+          <h2 class="text-3xl font-semibold text-gray-300">03. Customization</h2>
+          <p class="max-w-80 text-lg mt-4">
+            Everybody loves customization, you can easily customize it to your liking.
+          </p>
+        </div>
+        <img
+          class="ml-12"
+          src="~/assets/images/landing/customize.png"
+          alt="customize the widget that suits your branding"
+        />
+      </div>
+    </section>
+
+    <section class="py-16 flex flex-col items-center">
       <h2 class="text-2xl sm:text-4xl font-semibold text-gray-300 flex items-center">
-        <img :src="Logo" alt="hi Maker logo" class="w-12 mr-4" />
+        <img :src="Logo" alt="HiMaker logo" class="w-12 mr-4" />
         Made for ...
       </h2>
       <div class="grid lg:grid-cols-3 place-items-center gap-8 w-full mt-8">
@@ -137,19 +171,19 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
       class="py-16 flex flex-col-reverse sm:flex-row items-center sm:items-start sm:space-x-12 mx-auto text-dark-500 !max-w-screen-md"
     >
       <div class="sm:text-lg">
-        <h4 class="text-gray-300 text-2xl sm:text-4xl font-semibold">hi Maker!</h4>
-        <p class="mt-4">I'm Zernonia, the maker of hi Maker!</p>
+        <h4 class="text-gray-300 text-2xl sm:text-4xl font-semibold">HiMaker!</h4>
+        <p class="mt-4">I'm Zernonia, the maker of HiMaker!</p>
         <br />
         <p>
           There are tons of Linktree/Biolink kind of website that allow people on the internet to follow the you easily,
           but I wanted more than that! I wanted to share my social links, and showcase my project all everywhere. Thus
-          I've created <strong>hi Maker!</strong>
+          I've created <strong>HiMaker!</strong>
         </p>
         <br />
 
         <p>
-          hi Maker allow <strong>IndieHackers, Developers or Content Creator</strong> like you to easily create their
-          social links, and showcase their project on any website they wanted! hi Maker is aim to increase your
+          HiMaker allow <strong>IndieHackers, Developers or Content Creator</strong> like you to easily create their
+          social links, and showcase their project on any website they wanted! HiMaker is aim to increase your
           publicity, your projects' publicity and increase engagement with your audience.
         </p>
         <br />
@@ -157,7 +191,7 @@ import { widgetIndieHacker, widgetDeveloper, widgetContentCreator } from "~~/uti
         <p>Check out my project by clicking the button on the bottom-left corner 😁</p>
       </div>
       <div class="flex-shrink-0 w-64 h-86 mb-12 sm:mb-0">
-        <img class="rounded-2xl w-full h-full object-cover" :src="Maker" alt="maker - zernonia" />
+        <img class="rounded-2xl w-full h-full object-cover" src="~/assets/images/maker.png" alt="maker - zernonia" />
       </div>
     </section>
   </div>

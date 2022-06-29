@@ -72,7 +72,7 @@ const gopro = () => {}
     <div class="relative">
       <div
         ref="previewEl"
-        class="w-full h-80 relative rounded-2xl bg-gray-50 overflow-y-auto border border-dark-500 ring ring-dark-500 transition-all ease-in-out duration-700"
+        class="w-full h-80 relative rounded-2xl bg-transparent overflow-y-auto border border-dark-500 ring ring-dark-500 transition-all ease-in-out duration-700"
         :class="{ 'h-screen-md': isOpen }"
       >
         <div class="absolute top-4 left-4">

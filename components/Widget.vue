@@ -115,7 +115,7 @@ onMounted(() => (mounted.value = "1"))
         <img
           class="w-6 h-6 transform -rotate-5 group-hover:-rotate-15 transition mr-4"
           :src="Logo"
-          alt="hi Maker's logo"
+          alt="HiMaker's logo"
         />
         <h4>
           Powered by
@@ -123,7 +123,7 @@ onMounted(() => (mounted.value = "1"))
             target="_blank"
             class="text-primary hover:text-primary-hover transition font-semibold"
             to="https://himaker.io"
-            >hi Maker</NuxtLink
+            >HiMaker</NuxtLink
           >
         </h4>
       </div>
