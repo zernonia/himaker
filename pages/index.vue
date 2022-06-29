@@ -6,11 +6,11 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
 <template>
   <div>
     <section class="py-16 md:py-32 flex flex-col items-center">
-      <h1 class="text-3xl sm:text-6xl text-center font-semibold">
+      <h1 class="text-4xl sm:text-6xl text-center font-semibold">
         Embed & Showcase <br />
         your projects on websites
       </h1>
-      <p class="py-8 text-center text-primary font-semibold text-lg sm:text-2xl">
+      <p class="py-8 text-center text-primary font-semibold text-xl sm:text-2xl">
         Easily share your social link, project, <br />
         or any link with your visitors
       </p>
@@ -26,34 +26,42 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features ✨</h2>
-      <div class="flex items-center mt-12">
-        <div>
-          <h2 class="text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features ✨</h2>
+      <div class="flex flex-col-reverse md:flex-row items-center mt-6 md:mt-12">
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
           <p class="max-w-80 text-lg mt-4">
             Embed the widget on your website to share your social link and project easily
           </p>
         </div>
-        <img class="ml-6" src="~/assets/images/landing/embed-website.png" alt="embed widget in your website" />
+        <img
+          class="px-12 md:px-0 mb-6 md:mb-0 md:ml-6"
+          src="~/assets/images/landing/embed-website.png"
+          alt="embed widget in your website"
+        />
       </div>
-      <div class="flex items-center mt-12">
-        <img class="mr-12" src="~/assets/images/landing/social-links.png" alt="share your social links and projects" />
-        <div>
-          <h2 class="text-3xl font-semibold text-gray-300">02. Social Links & Projects</h2>
-          <p class="max-w-80 text-lg mt-4">
+      <div class="flex flex-col md:flex-row items-center mt-12">
+        <img
+          class="px-12 md:px-0 mb-6 md:mb-0 md:mr-12"
+          src="~/assets/images/landing/social-links.png"
+          alt="share your social links and projects"
+        />
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">02. Social Links & Projects</h2>
+          <p class="mx-auto max-w-80 text-lg mt-4">
             Share your social and project for your audience to easily follow you and your work!
           </p>
         </div>
       </div>
-      <div class="flex items-center mt-12">
-        <div>
-          <h2 class="text-3xl font-semibold text-gray-300">03. Customization</h2>
+      <div class="flex flex-col-reverse md:flex-row items-center mt-12">
+        <div class="text-center md:text-left">
+          <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">03. Customization</h2>
           <p class="max-w-80 text-lg mt-4">
             Everybody loves customization, you can easily customize it to your liking.
           </p>
         </div>
         <img
-          class="ml-12"
+          class="px-12 md:px-0 mb-6 md:mb-0 md:ml-12"
           src="~/assets/images/landing/customize.png"
           alt="customize the widget that suits your branding"
         />
@@ -61,7 +69,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-2xl sm:text-4xl font-semibold text-gray-300 flex items-center">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-gray-300 flex items-center">
         <img :src="Logo" alt="HiMaker logo" class="w-12 mr-4" />
         Made for ...
       </h2>
@@ -69,7 +77,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-2xl sm:text-4xl font-semibold text-dark-500 flex items-center">Pricing</h2>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">Pricing</h2>
       <div
         class="mt-8 flex flex-col sm:flex-row items-center p-8 md:p-16 rounded-4xl bg-primary w-full space-y-4 sm:space-y-0 sm:space-x-6"
       >
@@ -144,8 +152,8 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     <section
       class="py-16 flex flex-col-reverse sm:flex-row items-center sm:items-start sm:space-x-12 mx-auto text-dark-500 !max-w-screen-md"
     >
-      <div class="sm:text-lg">
-        <h4 class="text-gray-300 text-2xl sm:text-4xl font-semibold">HiMaker!</h4>
+      <div class="sm:text-lg text-center sm:text-left">
+        <h4 class="text-gray-300 text-3xl sm:text-4xl font-semibold">Hi Maker!</h4>
         <p class="mt-4">I'm Zernonia, the maker of HiMaker!</p>
         <br />
         <p>

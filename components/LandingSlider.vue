@@ -16,7 +16,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
 
 <template>
   <div @mouseenter="pause" @mouseleave="resume" class="flex flex-col items-center w-full mt-8">
-    <div class="flex space-x-4">
+    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
       <Button
         @click="currentSlide = 0"
         :class="{ 'p-button-secondary': currentSlide != 0 }"
