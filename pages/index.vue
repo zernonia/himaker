@@ -25,7 +25,10 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
     </section>
 
     <section class="py-16 flex flex-col items-center">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">Features ✨</h2>
+      <h2 class="text-3xl sm:text-4xl font-semibold text-dark-500 flex items-center">
+        Features
+        <img class="w-12 ml-4" :src="Logo" alt="HiMaker logo" />
+      </h2>
       <div class="flex flex-col-reverse md:flex-row items-center mt-6 md:mt-12">
         <div class="text-center md:text-left">
           <h2 class="text-2xl sm:text-3xl font-semibold text-gray-300">01. Embed Widget</h2>
