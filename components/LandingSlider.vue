@@ -16,7 +16,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
 
 <template>
   <div @mouseenter="pause" @mouseleave="resume" class="flex flex-col items-center w-full mt-8">
-    <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+    <div class="flex flex-row space-x-2 md:space-x-4">
       <Button
         @click="currentSlide = 0"
         :class="{ 'p-button-outlined': currentSlide != 0 }"
@@ -26,7 +26,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
       <Button
         :class="{ 'p-button-outlined': currentSlide != 1 }"
         @click="currentSlide = 1"
-        class="!sm:text-lg"
+        class="!sm:text-lg flex-shrink-0"
         label="Developer"
       ></Button>
       <Button

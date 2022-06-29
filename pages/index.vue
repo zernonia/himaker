@@ -184,5 +184,22 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
       </div>
     </section>
     <Footer></Footer>
+
+    <div class="fixed -left-32 top-32 md:top-64 -z-10 transform rotate-45">
+      <svg class="w-36 md:w-200px" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.10352e-05 86.56C6.10352e-05 15.2778 15.2779 -1.19446e-05 86.5601 -1.19446e-05H113.44C184.722 -1.19446e-05 200 15.2778 200 86.56V113.44C200 184.722 184.722 200 113.44 200H86.5601C15.2779 200 6.10352e-05 184.722 6.10352e-05 113.44V86.56Z"
+          fill="#00DDB3"
+        />
+      </svg>
+    </div>
+    <div class="fixed -right-32 bottom-1/4 -z-10 transform rotate-45">
+      <svg class="w-36 md:w-200px" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M6.10352e-05 86.56C6.10352e-05 15.2778 15.2779 -1.19446e-05 86.5601 -1.19446e-05H113.44C184.722 -1.19446e-05 200 15.2778 200 86.56V113.44C200 184.722 184.722 200 113.44 200H86.5601C15.2779 200 6.10352e-05 184.722 6.10352e-05 113.44V86.56Z"
+          fill="#00DDB3"
+        />
+      </svg>
+    </div>
   </div>
 </template>
