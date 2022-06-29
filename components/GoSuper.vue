@@ -7,13 +7,13 @@ const { isSuperUser } = useUserStore()
 const isYearly = ref(false)
 const buttonLabel = computed(() => {
   if (isYearly.value) {
-    return `Go Super! $50 /year`
+    return `Go Super! $30 /year`
   } else {
-    return `Go Super! $5 /month`
+    return `Go Super! $3 /month`
   }
 })
 
-const priceId = computed(() => (isYearly.value ? "price_1LFBJ6JvLKxh6TtR7GZYcITS" : "price_1LEt2EJvLKxh6TtRISqDgCvj"))
+const priceId = computed(() => (isYearly.value ? "price_1LG0TFJvLKxh6TtROkTTOKGM" : "price_1LG0TFJvLKxh6TtRnYhaPa4B"))
 
 const isLoading = ref(false)
 const onClick = async () => {
