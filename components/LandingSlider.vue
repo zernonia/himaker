@@ -36,7 +36,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
         label="Content Creator"
       ></Button>
     </div>
-    <div class="sm:p-12 mt-6 w-full flex relative justify-center rounded-4xl bg-gray-100">
+    <div class="sm:p-12 mt-6 w-full flex relative justify-center rounded-4xl bg-gray-100 shadow-lg">
       <Transition name="slide-down-fade" mode="out-in">
         <Widget v-if="currentSlide == 0" :widget="widgetIndieHacker"></Widget>
         <Widget v-else-if="currentSlide == 1" :widget="widgetDeveloper"></Widget>
