@@ -4,14 +4,14 @@ export const useCustomHead = (title: string, description?: string, image?: strin
     meta: [
       {
         name: "description",
-        content: description ?? "Embed beautiful widget on your website to introduce yourself and your masterpiece",
+        content: description ?? "Easily share your social link, project, or any link with your visitors",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@zernonia" },
       { name: "twitter:title", content: title },
       {
         name: "twitter:description",
-        content: description ?? "Embed beautiful widget on your website to introduce yourself and your masterpiece",
+        content: description ?? "Easily share your social link, project, or any link with your visitors",
       },
       { name: "twitter:image", content: image ?? "https://himaker.io/og.png" },
       { property: "og:type", content: "website" },
@@ -20,7 +20,7 @@ export const useCustomHead = (title: string, description?: string, image?: strin
       { property: "og:image", content: image ?? "https://himaker.io/og.png" },
       {
         property: "og:description",
-        content: description ?? "Embed beautiful widget on your website to introduce yourself and your masterpiece",
+        content: description ?? "Easily share your social link, project, or any link with your visitors",
       },
     ],
   })
