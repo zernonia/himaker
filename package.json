@@ -1,11 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && yarn uglify",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "tsc": "tsc -p tsconfig-dev.json --watch"
+    "tsc": "tsc -p tsconfig-dev.json --watch",
+    "uglify": "uglifyjs public/scripts/embed.js --output public/scripts/embed.min.js "
   },
   "devDependencies": {
     "@iconify-json/ion": "^1.1.2",
@@ -27,6 +28,7 @@
     "smooth-scrollbar": "^8.7.4",
     "stripe": "^9.10.0",
     "swiper": "^8.2.4",
+    "uglify-js": "^3.16.1",
     "vue-tippy": "^6.0.0-alpha.58",
     "vue3-smooth-dnd": "^0.0.2"
   }

@@ -7,7 +7,7 @@ const {
 
 const codeString = computed(
   () =>
-    `<script \n src="https://www.himaker.io/scripts/embed.js" \n async \n defer \n data-widget-id="${id}" \n>` +
+    `<script \n src="https://www.himaker.io/scripts/embed.min.js" \n async \n defer \n data-widget-id="${id}" \n>` +
     `</` +
     "script>"
 )
@@ -16,7 +16,7 @@ const srcString = computed(
     `
 <script>
   const s = document.createElement('script')
-  s.src= "https://www.himaker.io/scripts/embed.js" 
+  s.src= "https://www.himaker.io/scripts/embed.min.js" 
   s.async = true
   s.defer = true
   s.dataset.id = '${id}' 

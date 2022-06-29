@@ -15,6 +15,6 @@ watch(user, () => {
     <NuxtPage class="mt-8"></NuxtPage>
 
     <GoSuper></GoSuper>
-    <Script src="/scripts/embed.js" data-widget-id="p4ueqrlg" async defer data-placement="left"></Script>
+    <Script src="/scripts/embed.min.js" data-widget-id="p4ueqrlg" async defer data-placement="left"></Script>
   </div>
 </template>
