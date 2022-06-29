@@ -5,7 +5,7 @@ const widget = useWidgetStore()
 const { isSuperUser } = useUserStore()
 const { list } = toRefs(widget.value.links[0])
 const { onDrop, applyDrag } = useDnd(list)
-const isMax10Link = computed(() => !isSuperUser && list.value.length >= 10)
+const isMax10Link = computed(() => !isSuperUser.value && list.value.length >= 10)
 
 const addLink = () => {
   list.value.push({

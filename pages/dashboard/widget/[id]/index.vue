@@ -4,7 +4,7 @@ const widget = useWidgetStore()
 const { images } = toRefs(widget.value.heading)
 const { onDrop, applyDrag } = useDnd(images)
 
-const isMax3Image = computed(() => !isSuperUser && images.value.length >= 3)
+const isMax3Image = computed(() => !isSuperUser.value && images.value.length >= 3)
 const addImage = () => {
   if (isMax3Image.value) return
   images.value.push("")

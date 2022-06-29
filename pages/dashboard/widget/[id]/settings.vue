@@ -31,7 +31,7 @@ const { settings } = toRefs(widget.value)
         <label for="remove_branding">Remove Branding</label>
         <TagSuper></TagSuper>
       </div>
-      <InputSwitch v-model="settings.remove_branding"></InputSwitch>
+      <InputSwitch :disabled="!isSuperUser" v-model="settings.remove_branding"></InputSwitch>
     </div>
 
     <!-- <div class="pointer-events-none opacity-30">

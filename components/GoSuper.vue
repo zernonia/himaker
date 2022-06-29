@@ -4,6 +4,8 @@ import { getStripe } from "~~/utils/stripe-client"
 
 const { isOpen } = useSuper()
 const { isSuperUser } = useUserStore()
+const user = useSupabaseUser()
+
 const isYearly = ref(false)
 const buttonLabel = computed(() => {
   if (isYearly.value) {
@@ -17,6 +19,10 @@ const priceId = computed(() => (isYearly.value ? "price_1LG0TFJvLKxh6TtROkTTOKGM
 
 const isLoading = ref(false)
 const onClick = async () => {
+  if (!user.value?.id) {
+    navigateTo("/login")
+    return
+  }
   isLoading.value = true
   try {
     const { sessionId } = await $fetch("/api/create-checkout-session", {
@@ -36,7 +42,7 @@ const onClick = async () => {
   <Transition name="scale">
     <div
       v-if="isOpen"
-      class="fixed top-0 left-0 w-screen h-screen backdrop-filter backdrop-blur flex items-center justify-center"
+      class="fixed z-1000 top-0 left-0 w-screen h-screen backdrop-filter backdrop-blur flex items-center justify-center"
       @click.self="isOpen = false"
     >
       <div v-if="isOpen" class="w-screen-sm py-24 px-6 flex flex-col items-center bg-white rounded-4xl shadow-xl">
@@ -81,7 +87,7 @@ const onClick = async () => {
             </li>
           </div>
 
-          <Button :loading="isLoading" class="!mt-6 w-64" :label="buttonLabel" @click="onClick"></Button>
+          <Button :loading="isLoading" class="!mt-6 w-64 !text-xl" :label="buttonLabel" @click="onClick"></Button>
         </div>
 
         <div v-else class="my-8">

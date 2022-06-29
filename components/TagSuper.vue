@@ -7,7 +7,7 @@ const { isSuperUser, user } = useUserStore()
 
 <template>
   <button
-    v-if="!isSuperUser && user?.subscription"
+    v-if="!isSuperUser && !user?.subscription"
     class="px-3 py-1.5 rounded-lg bg-dark-500 text-white text-[10px] flex items-center space-x-2 font-semibold"
     @click="goSuper"
   >

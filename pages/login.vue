@@ -14,6 +14,7 @@ const login = (provider: Provider) => {
       provider,
     },
     { redirectTo: window.location.origin + "/login" }
+    // { redirectTo: window.location.origin }
   )
 }
 

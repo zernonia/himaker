@@ -21,9 +21,9 @@ const initialState: Widget = {
   ],
   projects: [
     {
-      image: "https://zernonia.com/og.png",
+      image: "https://himaker.io/og.png",
       title: "Your website",
-      url: "https://zernonia.com/",
+      url: "https://himaker.io/",
     },
   ],
   style: {

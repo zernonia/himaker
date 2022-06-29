@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import Logo from "~~/assets/images/logo.svg"
 import LogoSuper from "~~/assets/images/logoSuper.svg"
+
+const { isOpen } = useSuper()
 </script>
 
 <template>
@@ -22,6 +24,14 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
         />
         <Button label="Give it a try" class="!sm:text-xl p-button-secondary"></Button>
       </NuxtLink>
+    </section>
+
+    <section class="py-8 mb-8 flex flex-col items-center">
+      <h2 class="text-3xl sm:text-4xl font-semibold text-gray-300 flex items-center">
+        <img :src="Logo" alt="Hi Maker logo" class="w-12 mr-4" />
+        Made for ...
+      </h2>
+      <LandingSlider></LandingSlider>
     </section>
 
     <section class="py-16 flex flex-col items-center">
@@ -64,14 +74,6 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
           alt="customize the widget that suits your branding"
         />
       </div>
-    </section>
-
-    <section class="py-16 flex flex-col items-center">
-      <h2 class="text-3xl sm:text-4xl font-semibold text-gray-300 flex items-center">
-        <img :src="Logo" alt="Hi Maker logo" class="w-12 mr-4" />
-        Made for ...
-      </h2>
-      <LandingSlider></LandingSlider>
 
       <NuxtLink to="/login" class="mt-16 group relative">
         <img
@@ -111,8 +113,9 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
           </div>
         </div>
 
-        <div
+        <button
           class="w-full sm:w-1/2 group flex flex-col items-center p-6 md:p-10 border-4 border-dark-500 bg-white rounded-3xl"
+          @click="isOpen = true"
         >
           <div class="flex flex-col items-center">
             <img
@@ -152,7 +155,7 @@ import LogoSuper from "~~/assets/images/logoSuper.svg"
               Support Indie Maker
             </li>
           </div>
-        </div>
+        </button>
       </div>
     </section>
 

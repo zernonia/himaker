@@ -100,7 +100,7 @@ const gopro = () => {}
           iconPos="right"
         ></Button>
 
-        <h5 class="font-bold text-gray-400 !mt-8">Setup</h5>
+        <h5 class="font-semibold text-gray-400 !mt-8">Setup</h5>
         <button
           class="px-2 py-2 flex items-center w-full text-left rounded-lg bg-transparent hover:bg-gray-100 transition-all"
           :class="{ 'font-semibold text-teal-500 text-lg': childPath === '/' }"
