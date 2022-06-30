@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import Logo from "~~/assets/images/logo.svg"
 import LogoSuper from "~~/assets/images/logoSuper.svg"
-
-const { isOpen } = useSuper()
 </script>
 
 <template>
@@ -113,9 +111,8 @@ const { isOpen } = useSuper()
           </div>
         </div>
 
-        <button
+        <div
           class="w-full sm:w-1/2 group flex flex-col items-center p-6 md:p-10 border-4 border-dark-500 bg-white rounded-3xl"
-          @click="isOpen = true"
         >
           <div class="flex flex-col items-center">
             <img
@@ -155,7 +152,13 @@ const { isOpen } = useSuper()
               Support Indie Maker
             </li>
           </div>
-        </button>
+
+          <Button
+            @click="navigateTo('/dashboard')"
+            label="$3 /month or $30 /year"
+            class="p-button-secondary !mt-12 !text-lg"
+          ></Button>
+        </div>
       </div>
     </section>
 
